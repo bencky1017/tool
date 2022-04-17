@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<link rel="icon" type="image/png" sizes="128x128" href="favicon.ico">
+	<title>Hitokoto Message</title>
+	<!-- <script type="text/javascript" src="js/jquery-3.5.1.js"></script> -->
+	<base target="_self"/>
+	<style type="text/css">
+		.hito_main{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+			height: ;
+			width: 70vw;
+			border: #666 solid 2px;
+			text-align: left;
+			font-size: 3vh;
+		}
+	</style>
+</head>
+<body>
+	<div class="hito_main">
+		<pre style="word-wrap: break-word; white-space: pre-wrap;" id="hito_str"></pre>
+	</div>
+	<script type="text/javascript">
+		document.getElementById('hito_str').innerHTML=localStorage.getItem('bk_tool_hito');
+	</script>
+</body>
+</html>

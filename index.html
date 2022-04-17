@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="吟风工具箱，不仅创造工具，还是工具的搬运工。">
+	<meta name="keywords" content="吟风工具箱,吟风,工具,资源,合集"/>
+	<meta name="author" content="Geek_BK"/>
+	<!-- <link rel="icon" type="image/png" sizes="70x70" href="img/favicon.png"> -->
+	<title>吟风工具箱</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+
+	<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/index.json"></script>
+	<base target="_blank"/>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<div class="headerborder">
+				<div class="header-title">吟风工具箱</div>
+				<a href="" class="sign_href">
+					<div class="header-sign">
+						『<span class="sign_a">未入苦处，不信神佛</span>』
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="main">
+			<div class="leftside"><!-- 左侧栏 -->
+				<ul>
+					<!-- <li class="left-list">全部显示</li> -->
+				</ul>
+			</div>
+			<div class="mainpart"><!-- 主区块 -->
+				<div class="main-tag" data-desc='全部'><!-- 顶部标签 -->
+					<ul>
+						<!-- <li class="tag-list">全部</li> -->
+					</ul>
+				</div>
+				<!-- 内容盒子 -->
+				<div class="main-box" data-desc='所有内容-test' style="display: none;">
+					<div class="boxboder">
+						<div class="box-list">
+							<div class="list-img">
+								<img src="img/1.png" alt="">
+							</div>
+							<div class="list-text">
+								<div class="text-title">微信聊天模拟器</div>
+								<div class="text-desc">模拟多人聊天记录、截图模拟多人聊天记录、截图模拟多人聊天记录</div>
+							</div>
+						</div>
+						<div class="box-list"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer"></div>
+	</div>
+	<script type="text/javascript">
+		$.get("https://v1.hitokoto.cn/?c=b&c=d&c=e&c=f&c=g&c=h&c=j&",function(data,status){
+			if (status == 'success'){
+				var hito_str='';
+				let param=new Array(12);
+				param[0]=data.id;			//id
+				param[1]=data.uuid;			//uuid
+				param[2]=data.hitokoto;		//hitokoto
+				param[3]=data.type;			//type
+				param[4]=data.from;			//from
+				param[5]=data.from_who;		//from_who
+				param[6]=data.creator;		//creator
+				param[7]=data.creator_uid;	//creator_uid
+				param[8]=data.reviewer;		//reviewer
+				param[9]=data.commit_from;	//commit_from
+				param[10]=data.created_at;	//created_at
+				param[11]=data.length;		//length
+				
+				tool_hito='{\n&nbsp;"id":'		+param[0]+
+					',\n&nbsp;"uuid":"'			+param[1]+'"'+
+					',\n&nbsp;"hitokoto":"'		+param[2]+'"'+
+					',\n&nbsp;"type":"'			+param[3]+'"'+
+					',\n&nbsp;"from":"'			+param[4]+'"'+
+					',\n&nbsp;"from_who":"'		+param[5]+'"'+
+					',\n&nbsp;"creator":"'		+param[6]+'"'+
+					',\n&nbsp;"creator_uid":'	+param[7]+
+					',\n&nbsp;"reviewer":'		+param[8]+
+					',\n&nbsp;"commit_from":"'	+param[9]+'"'+
+					',\n&nbsp;"created_at":"'	+param[10]+'"'+
+					',\n&nbsp;"length":'		+param[11]+
+					'\n}';
+				window.localStorage.setItem("bk_tool_hito",tool_hito);
+				$('.sign_a').text(data.hitokoto);
+				$('.sign_href').attr('href', 'hitokoto.html')
+				// $('.sign_a').attr('href', 'https://v1.hitokoto.cn/?c=b&c=d&c=e&c=f&c=g&c=h&c=j&id=' + data.id)
+				// $('.sign_a').attr('href', 'https://hitokoto.cn/?uuid=' + data.uuid)
+				// $('.hitokoto_from').text(data.from);
+			}
+			else{
+				$('.sign_a').text('未入苦处不信神佛');
+			}
+		});
+	</script>
+</body>
+</html>
