@@ -7,13 +7,13 @@ link=
 				{
 					"tag_name":"视频",
 					"tag_box":[
-						{"url":"https://v.qq.com/","img":"default.png","title":"腾讯视频","desc":""},
-						{"url":"https://www.youku.com/","img":"default.png","title":"优酷","desc":""},
-						{"url":"https://www.iqiyi.com/","img":"default.png","title":"爱奇艺","desc":""},
-						{"url":"https://www.bilibili.com/","img":"default.png","title":"哔哩哔哩","desc":""},
-						{"url":"https://www.mgtv.com/","img":"default.png","title":"芒果TV","desc":""},
-						{"url":"https://film.sohu.com/","img":"default.png","title":"搜狐视频","desc":""},
-						{"url":"http://www.le.com/","img":"default.png","title":"乐视视频","desc":""},
+						{"url":"https://v.qq.com/","img":"default.png","title":"腾讯视频","desc":"中国领先的在线视频媒体平台,海量高清视频在线观看"},
+						{"url":"https://www.youku.com/","img":"default.png","title":"优酷","desc":"你的热爱 正在热播"},
+						{"url":"https://www.iqiyi.com/","img":"default.png","title":"爱奇艺","desc":"在线视频网站-海量正版高清视频在线观看官方"},
+						{"url":"https://www.bilibili.com/","img":"default.png","title":"哔哩哔哩","desc":"(゜-゜)つロ 干杯~-bilibili"},
+						{"url":"https://www.mgtv.com/","img":"default.png","title":"芒果TV","desc":"大家都在看的在线视频网站"},
+						{"url":"https://film.sohu.com/","img":"default.png","title":"搜狐视频","desc":"开通会员-正版高清大剧随心看"},
+						{"url":"http://www.le.com/","img":"default.png","title":"乐视视频","desc":"高清极速观看体验,丰富热剧乐享其中"},
 						{"url":"https://www.hanjutv2020.com/","img":"default.png","title":"韩剧TV","desc":""}
 					]
 				},
