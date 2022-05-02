@@ -59,8 +59,10 @@ $(function(){
 			var num_box=link.list[i].tag[j].tag_box.length;
 			for (var k = 0; k < num_box; k++) {
 				var info=link.list[i].tag[j].tag_box[k];
-				var box_list='<div class="box-list"><div class="list-img"><img src="img/'+info.img+'" alt=""></div><div class="list-text"><div class="text-title">'+info.title+'</div><div class="text-desc">'+info.desc+'</div></div></div>';
-				$('.main-box').last().find('.boxboder').append(box_list);
+				if (info.power==0) {
+					var box_list='<div class="box-list" data-boxid="'+info.id+'"><div class="list-img"><img src="img/'+info.img+'" alt=""></div><div class="list-text"><div class="text-title">'+info.title+'</div><div class="text-desc">'+info.desc+'</div></div></div>';
+					$('.main-box').last().find('.boxboder').append(box_list);
+				}
 			}
 		}
 	}
@@ -91,13 +93,89 @@ $(function(){
 	});
 
 	// 赋值点击链接
-	$('.box-list').on('click',function(){
-		id=index_list.toString()+index_tag.toString();
+	$('.box-list').off('click').on('click',function(){
+		// id=index_list.toString()+index_tag.toString();
 		// console.log(index_list,index_tag,id,$(this).index());
-		var src=link.list[index_list].tag[index_tag].tag_box[$(this).index()].url
+		var id_mainbox=$(this).parents('.main-box').data('id').toString();
+		var id_boxlist=$(this).data('boxid').toString();
+		var src=link.list[id_mainbox[0]].tag[id_mainbox[1]].tag_box[parseInt(id_boxlist)].url;
 		window.open(src);
 		// $(this).attr('href',src);
 		// $(location).prop({'href':src},{'target':'_blank'});
 		// $(location).attr({'href':src},{'target':'_blank'});
+	});
+});
+$(function(){
+	// 高级模式
+	var jsonData={'key':'','value':'','power':0,'last_power':0};
+	window.localStorage.setItem('bk_tool_devmode',JSON.stringify(jsonData));
+	$('.header-login').on('click',function(){
+		var bk_tool_devmode=window.localStorage.getItem('bk_tool_devmode');
+		console.log(bk_tool_devmode);
+
+		if (bk_tool_devmode!=null&bk_tool_devmode!=undefined) {
+			var last_power=JSON.parse(bk_tool_devmode).power;
+			jsonData.last_power=last_power;
+			window.localStorage.setItem('bk_tool_devmode',JSON.stringify(jsonData));
+		}
+
+		let login_prompt=prompt("请输入密钥序列：\n【管理员】权限值:100\n【普通用户】权限值:10\n【测试用户】权限值:0",123);
+		let get_key=login_prompt==''|login_prompt==null?0:mdbk(login_prompt);
+
+		var isexist=0;//密钥存在判断
+		for (var i = 0; i < link.keylist.length; i++) {
+			for (var key in link.keylist[i]){
+				if (get_key == key) {
+					isexist=1;//密钥存在列表中
+					alert("【"+link.keylist[i][key]+":"+link.keylist[i].power+"】"+"身份确认，进入高级模式！\n【刷新页面后重置身份！】");
+
+					//添加localStorage存储
+					jsonData.key=get_key;
+					jsonData.value=link.keylist[i][key];
+					jsonData.power=link.keylist[i].power;
+
+					window.localStorage.setItem('bk_tool_devmode',JSON.stringify(jsonData));//json转换为string
+					$('.header-login').text(jsonData.value+':'+jsonData.power);
+					break;
+				}else if (isexist == 0 & i == link.keylist.length-1) {
+					alert("密钥错误！联系管理员确认密钥。");
+					break;
+				}
+			}
+		}
+
+		bk_tool_devmode=window.localStorage.getItem('bk_tool_devmode');
+		var getpw=bk_tool_devmode!=null&bk_tool_devmode!=undefined?JSON.parse(bk_tool_devmode).power:0;
+		var power=JSON.parse(bk_tool_devmode).power;
+		var last_power=JSON.parse(bk_tool_devmode).last_power;
+		var boxcount=0;
+
+		var num_list=link.list.length;//左侧列表数
+		for (var i = 0; i < num_list; i++) {
+			var num_tag=link.list[i].tag.length;//对应列表标签数
+			boxcount+=num_tag;//计算盒子数量
+			for (var j = 0; j < num_tag; j++) {
+				var id=i.toString()+j.toString();//data-id
+				var num_box=link.list[i].tag[j].tag_box.length;//对应标签盒子数
+				for (var k = 0; k < num_box; k++) {
+					var info=link.list[i].tag[j].tag_box[k];//盒子信息
+					if(info.power>0&info.power<=getpw&(power<last_power?power:last_power)<info.power){
+						var box_list='<div class="box-list" data-boxid="'+info.id+'" data-power="pw-'+info.power+'"><div class="list-img"><img src="img/'+info.img+'" alt=""></div><div class="list-text"><div class="text-title">'+info.title+'</div><div class="text-desc">'+info.desc+'</div></div></div>';
+						$('.main-box[data-id='+id+']').find('.boxboder .box-list').eq(k-1).after(box_list);
+
+					}else if (info.power>getpw){
+						//去除权限不够的盒子
+						$('.box-list[data-power^="pw-'+info.power+'"]').remove();
+					}
+				}
+			}
+		}
+		$('.box-list[data-power^="pw-"]').css({'background-color':"#1d212c"});
+		$('.box-list').off('click').on('click',function(){
+			var id_mainbox=$(this).parents('.main-box').data('id').toString();
+			var id_boxlist=$(this).data('boxid').toString();
+			var src=link.list[id_mainbox[0]].tag[id_mainbox[1]].tag_box[parseInt(id_boxlist)].url
+			window.open(src);
+		});
 	});
 });
