@@ -119,7 +119,7 @@ $(function(){
 			window.localStorage.setItem('bk_tool_devmode',JSON.stringify(jsonData));
 		}
 
-		let login_prompt=prompt("请输入密钥序列：\n【管理员】权限值:100\n【普通用户】权限值:10\n【测试用户】权限值:0",123);
+		let login_prompt=prompt("请输入密钥序列：",123);
 		let get_key=login_prompt==''|login_prompt==null?0:mdbk(login_prompt);
 
 		var isexist=0;//密钥存在判断
@@ -178,4 +178,33 @@ $(function(){
 			window.open(src);
 		});
 	});
+
+	// 右击菜单
+	$('.header-login').on('contextmenu',function(event){
+		event.preventDefault();
+		var pos_X=event.pageX+5;
+		var pos_Y=event.pageY+5;
+		var menu_logout='<div class="header-login-menu" style="display:none;"><ul><li class="menu_help">帮助</li><li class="menu_quit">退出</li></ul></div>';
+		var menu_login='<div class="header-login-menu" style="display:none;"><ul><li class="menu_help">帮助</li></ul></div>';
+		$('.header-login-menu').remove();
+		$('.header-login').text()=='高级模式'?$('.header-login').after(menu_login):$('.header-login').after(menu_logout);
+		$('.header-login-menu').css({left:pos_X,top:pos_Y}).show();
+		$('.menu_help').off().on('click',function(){
+			alert('【管理员】权限值:100\n【普通用户】权限值:10\n【测试用户】权限值:0')
+		});
+		$('.menu_quit').off().on('click',function(){
+			$('.header-login').text('高级模式');
+			jsonData.key='';
+			jsonData.value='';
+			jsonData.power=0;
+			window.localStorage.setItem('bk_tool_devmode',JSON.stringify(jsonData));
+		});
+		return false;
+	});
+	$('.header-login .header-login-menu').off().on('mouseleave',function(){
+		$('.header-login-menu').remove();
+	});
+	$(document).on('click',function(){
+		$('.header-login-menu').remove();
+	})
 });
