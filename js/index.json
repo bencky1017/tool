@@ -29,26 +29,30 @@ link=
 					"tag_box":[
 						{"id":"00","power":0,"img":"default.png","url":"https://duboku.su/","title":"独播库","desc":""},
 						{"id":"01","power":0,"img":"default.png","url":"https://ddrk.me/","title":"低端影视","desc":""},
-						{"id":"02","power":0,"img":"default.png","url":"https://duo9527.com/","title":"多多电影网","desc":""},
+						{"id":"02","power":-1,"img":"default.png","url":"https://duo9527.com/","title":"多多电影网","desc":""},
 						{"id":"03","power":0,"img":"default.png","url":"https://video.tf/","title":"核桃影院","desc":""},
-						{"id":"04","power":0,"img":"default.png","url":"http://www.kuhuiv.com/","title":"酷绘视频","desc":""},
-						{"id":"05","power":0,"img":"default.png","url":"http://www.imomoe.la/","title":"樱花动漫","desc":""},
-						{"id":"06","power":0,"img":"default.png","url":"https://www.idybee.com/","title":"电影蜜蜂","desc":""},
-						{"id":"07","power":20,"img":"default0.png","url":"http://www.dybee.tv/","title":"电影蜜蜂原域名","desc":""},
-						{"id":"08","power":0,"img":"default.png","url":"http://aaqqs.com/","title":"喝茶影视","desc":""},
-						{"id":"09","power":0,"img":"default.png","url":"https://www.bttwoo.com/","title":"两个BT","desc":""},
-						{"id":"10","power":20,"img":"default.png","url":"https://www.bttwo.vip/","title":"两个BT发布页","desc":""},
-						{"id":"11","power":20,"img":"default.png","url":"https://www.zxzj.me/","title":"在线之家原","desc":""},
-						{"id":"12","power":0,"img":"default.png","url":"https://www.zxzjtv.com/","title":"在线之家","desc":""},
-						{"id":"13","power":0,"img":"default.png","url":"https://www.novipnoad.com/","title":"NO视频","desc":""},
-						{"id":"14","power":0,"img":"default.png","url":"http://www.bumimi99.com/","title":"布米米","desc":""},
-						{"id":"15","power":0,"img":"default.png","url":"https://www.pianku.li/","title":"片库","desc":""},
-						{"id":"16","power":20,"img":"default0.png","url":"http://www.zhenbuka.vip/","title":"真不卡发布页","desc":""},
-						{"id":"17","power":20,"img":"default0.png","url":"http://www.zhenbuka.fun/","title":"真不卡发布页","desc":""},
-						{"id":"18","power":0,"img":"default.png","url":"http://www.zhenbuka3.com/","title":"真不卡","desc":""},
-						{"id":"19","power":20,"img":"default0.png","url":"https://bitbucket.org/dianying/1/wiki/Home","title":"电影先生发布页","desc":""},
-						{"id":"20","power":0,"img":"default.png","url":"http://dianying.in/","title":"电影先生","desc":""},
-						{"id":"21","power":0,"img":"default.png","url":"https://www.hanjutv2020.com/","title":"韩剧TV","desc":""}
+						{"id":"04","power":0,"img":"default.png","url":"https://so2.cc/","title":"淘剧鸭","desc":""},
+						{"id":"05","power":0,"img":"default.png","url":"http://www.kuhuiv.com/","title":"酷绘视频","desc":""},
+						{"id":"06","power":20,"img":"default.png","url":"http://www.imomoe.la/","title":"樱花动漫","desc":""},
+						{"id":"07","power":0,"img":"default.png","url":"https://www.idybee.com/","title":"电影蜜蜂","desc":""},
+						{"id":"08","power":20,"img":"default0.png","url":"http://www.dybee.tv/","title":"电影蜜蜂原域名","desc":""},
+						{"id":"09","power":-1,"img":"default.png","url":"http://aaqqs.com/","title":"喝茶影视","desc":""},
+						{"id":"10","power":0,"img":"default.png","url":"https://www.bttwoo.com/","title":"两个BT","desc":""},
+						{"id":"11","power":20,"img":"default.png","url":"https://www.bttwo.vip/","title":"两个BT发布页","desc":""},
+						{"id":"12","power":20,"img":"default.png","url":"https://www.zxzj.me/","title":"在线之家原","desc":""},
+						{"id":"13","power":0,"img":"default.png","url":"https://www.zxzjtv.com/","title":"在线之家","desc":""},
+						{"id":"14","power":0,"img":"default.png","url":"https://www.novipnoad.com/","title":"NO视频","desc":""},
+						{"id":"15","power":0,"img":"default.png","url":"http://www.bumimi99.com/","title":"布米米","desc":""},
+						{"id":"16","power":20,"img":"default.png","url":"http://www.bumimi.vip/","title":"布米米发布","desc":""},
+						{"id":"17","power":-1,"img":"default.png","url":"https://www.pianku.li/","title":"片库","desc":""},
+						{"id":"18","power":20,"img":"default0.png","url":"http://www.zhenbuka.vip/","title":"真不卡跳转页","desc":""},
+						{"id":"19","power":20,"img":"default0.png","url":"http://www.zhenbuka.fun/","title":"真不卡发布页","desc":""},
+						{"id":"20","power":0,"img":"default.png","url":"http://www.zhenbuka3.com/","title":"真不卡","desc":""},
+						{"id":"21","power":20,"img":"default0.png","url":"https://bitbucket.org/dianying/1/wiki/Home","title":"电影先生发布页","desc":""},
+						{"id":"22","power":20,"img":"default.png","url":"https://dianying.bitbucket.io/1/","title":"电影先生跳转","desc":""},
+						{"id":"23","power":20,"img":"default.png","url":"http://dianying.in/","title":"电影先生原域名","desc":""},
+						{"id":"24","power":0,"img":"default.png","url":"http://www.dianyingim.com/","title":"电影先生","desc":""},
+						{"id":"25","power":-1,"img":"default.png","url":"https://www.hanjutv2020.com/","title":"韩剧TV","desc":""}
 					]
 				},
 				{
@@ -56,10 +60,10 @@ link=
 					"tag_index":"02",
 					"tag_box":[
 						{"id":"00","power":20,"img":"default.png","url":"https://api.jhdyw.vip/?url=","title":"江湖云","desc":""},
-						{"id":"01","power":0,"img":"default.png","url":"http://vip.qji.me/","title":"116影视搜","desc":""},
-						{"id":"02","power":10,"img":"default.png","url":"https://vip.116kan.com/","title":"116影视搜","desc":""},
+						{"id":"01","power":-1,"img":"default.png","url":"http://vip.qji.me/","title":"116影视搜","desc":""},
+						{"id":"02","power":-1,"img":"default.png","url":"https://vip.116kan.com/","title":"116看","desc":""},
 						{"id":"03","power":0,"img":"default.png","url":"https://svip.bljiex.cc/?v=","title":"BL解析","desc":""},
-						{"id":"04","power":10,"img":"default.png","url":"https:/vip.bljiex.com/?v=","title":"BL解析","desc":""},
+						{"id":"04","power":10,"img":"default.png","url":"https:/vip.bljiex.com/?v=","title":"BL解析原","desc":""},
 						{"id":"05","power":20,"img":"default.png","url":"https://www.91jxs.com/jiexi/?url=","title":"91解析社","desc":""},
 						{"id":"06","power":0,"img":"default.png","url":"https://jx.blbo.cc:4433/?url=","title":"人人迷","desc":""},
 						{"id":"07","power":20,"img":"default.png","url":"https://parse.mw0.cc/?url=","title":"云解析","desc":""},
@@ -75,19 +79,18 @@ link=
 						{"id":"17","power":0,"img":"default.png","url":"http://jiexi.52sharing.cn/","title":"吾爱解析","desc":""},
 						{"id":"18","power":0,"img":"default.png","url":"https://www.pangujiexi.cc/jiexi.php?url=","title":"盘古解析","desc":""},
 						{"id":"19","power":0,"img":"default.png","url":"https://go.yh0523.cn/y.cy?url=","title":"盘古云","desc":""},
-						{"id":"20","power":0,"img":"default.png","url":"https://123.1dior.cn/?url=","title":"迪奥解析","desc":""},
-						{"id":"21","power":0,"img":"default.png","url":"https://jx.rdhk.net/?v=","title":"RDHK","desc":""},
-						{"id":"22","power":0,"img":"default.png","url":"https://api.jiexi.la/?url=","title":"解析啦","desc":""},
-						{"id":"23","power":0,"img":"default.png","url":"https://jx.youyitv.com/?url=","title":"98看","desc":""},
-						{"id":"24","power":0,"img":"default.png","url":"https://vip.laobandq.com/jiexi.php?url=","title":"老板","desc":""},
-						{"id":"25","power":0,"img":"default.png","url":"https://jx.jiubojx.com/vip/?url=","title":"久播","desc":""},
-						{"id":"26","power":0,"img":"default.png","url":"https://jx.ivito.cn/?url=","title":"维多","desc":""},
-						{"id":"27","power":0,"img":"default.png","url":"https://vip.swuii.top/?url=","title":"星驰解析一","desc":""},
-						{"id":"28","power":0,"img":"default.png","url":"https://vip.cjys.top/?url=","title":"星驰解析二","desc":""},
-						{"id":"29","power":0,"img":"default.png","url":"https://api.yueliangjx.com/?url=","title":"月亮","desc":""},
-						{"id":"30","power":0,"img":"default.png","url":"https://jx.yparse.com/index.php?url=","title":"云析","desc":""},
-						{"id":"31","power":10,"img":"default.png","url":"http://avip.fun/tv?utm_source=recommend","title":"野猫VIP","desc":""},
-						{"id":"32","power":0,"img":"default.png","url":"http://www.czjx8.com/","title":"船长解析","desc":""}
+						{"id":"20","power":0,"img":"default.png","url":"https://jx.rdhk.net/?v=","title":"RDHK","desc":""},
+						{"id":"21","power":0,"img":"default.png","url":"https://api.jiexi.la/?url=","title":"解析啦","desc":""},
+						{"id":"22","power":-1,"img":"default.png","url":"https://jx.youyitv.com/?url=","title":"98看","desc":""},
+						{"id":"23","power":0,"img":"default.png","url":"https://vip.laobandq.com/jiexi.php?url=","title":"老板","desc":""},
+						{"id":"24","power":-1,"img":"default.png","url":"https://jx.jiubojx.com/vip/?url=","title":"久播","desc":""},
+						{"id":"25","power":0,"img":"default.png","url":"https://jx.ivito.cn/?url=","title":"维多","desc":""},
+						{"id":"26","power":0,"img":"default.png","url":"https://vip.swuii.top/?url=","title":"星驰解析一","desc":""},
+						{"id":"27","power":-1,"img":"default.png","url":"https://vip.cjys.top/?url=","title":"星驰解析二","desc":""},
+						{"id":"28","power":-1,"img":"default.png","url":"https://api.yueliangjx.com/?url=","title":"月亮","desc":""},
+						{"id":"29","power":0,"img":"default.png","url":"https://jx.yparse.com/index.php?url=","title":"云析","desc":""},
+						{"id":"30","power":10,"img":"default.png","url":"http://avip.fun/tv?utm_source=recommend","title":"野猫VIP","desc":""},
+						{"id":"31","power":-1,"img":"default.png","url":"http://www.czjx8.com/","title":"船长解析","desc":""}
 					]
 				}
 			]
@@ -107,28 +110,29 @@ link=
 						{"id":"05","power":0,"img":"10-6.png","url":"https://www.9ku.com/","title":"9酷音乐","desc":"流行歌曲|经典歌曲|mp3音乐歌曲免费下载在线听"},
 						{"id":"06","power":0,"img":"10-7.png","url":"https://www.1ting.com/","title":"一听","desc":"免费网络在线正版音乐站"},
 						{"id":"07","power":0,"img":"10-8.png","url":"http://5sing.kugou.com/index.html","title":"5sing","desc":"中国原创音乐基地"},
-						{"id":"08","power":0,"img":"default.png","url":"https://music.zhuolin.wang/","title":"卓林","desc":""},
-						{"id":"09","power":0,"img":"default.png","url":"http://player.zgei.com/","title":"免费听歌","desc":""},
-						{"id":"10","power":0,"img":"default.png","url":"https://www.hifige.com/music/","title":"HIFI阁","desc":""},
-						{"id":"11","power":-1,"img":"default.png","url":"http://music.runker.net/","title":"行客听歌","desc":""}
+						{"id":"08","power":-1,"img":"default.png","url":"http://music.runker.net/","title":"行客听歌","desc":""},
+						{"id":"09","power":-1,"img":"default.png","url":"http://player.zgei.com/","title":"免费听歌","desc":""},
+						{"id":"10","power":-1,"img":"default.png","url":"https://www.hifige.com/music/","title":"HIFI阁","desc":""}
 					]
 				},
 				{
 					"tag_name":"音乐解析",
 					"tag_index":"11",
 					"tag_box":[
-						{"id":"00","power":0,"img":"default.png","url":"https://music.sonimei.cn/","title":"搜你妹","desc":""},
-						{"id":"01","power":10,"img":"default.png","url":"https://www.769sc.com/","title":"搜你妹原","desc":""},
-						{"id":"02","power":0,"img":"default.png","url":"http://www.zgei.com/","title":"全网音乐","desc":""},
+						{"id":"00","power":-1,"img":"default.png","url":"https://music.sonimei.cn/","title":"搜你妹","desc":""},
+						{"id":"01","power":0,"img":"default.png","url":"https://www.769sc.com/","title":"搜你妹原","desc":""},
+						{"id":"02","power":-1,"img":"default.png","url":"http://www.zgei.com/","title":"全网音乐","desc":""},
 						{"id":"03","power":0,"img":"default.png","url":"http://www.jbsou.cn/","title":"煎饼搜","desc":""},
-						{"id":"04","power":0,"img":"default.png","url":"http://www.at38.cn/","title":"51音乐","desc":""},
-						{"id":"05","power":0,"img":"default.png","url":"http://tool.yijingying.com/musictools/","title":"MusicTools","desc":""},
-						{"id":"06","power":0,"img":"default.png","url":"http://music.ifkdy.com/","title":"疯狂音乐","desc":""},
-						{"id":"07","power":0,"img":"default.png","url":"https://music.ghxi.com/","title":"果核音乐","desc":""},
-						{"id":"08","power":0,"img":"default.png","url":"http://www.musictool.top/","title":"音乐搜索器","desc":""},
-						{"id":"09","power":0,"img":"default.png","url":"https://www.hifini.com/","title":"音乐磁场","desc":""},
-						{"id":"10","power":0,"img":"default.png","url":"http://music.y444.cn/#/","title":"下歌吧","desc":""},
-						{"id":"11","power":0,"img":"default.png","url":"http://www.runker.cool/music.html","title":"行客听歌","desc":""}
+						{"id":"04","power":-1,"img":"default.png","url":"http://www.at38.cn/","title":"51音乐","desc":""},
+						{"id":"05","power":10,"img":"default.png","url":"https://www.yijingying.com/html/unlock-music/","title":"音乐解锁","desc":""},
+						{"id":"06","power":10,"img":"default.png","url":"https://www.yijingying.com/html/musictools/","title":"MusicTools","desc":""},
+						{"id":"07","power":-1,"img":"default.png","url":"http://music.ifkdy.com/","title":"疯狂音乐","desc":""},
+						{"id":"08","power":0,"img":"default.png","url":"https://music.ghxi.com/","title":"果核音乐","desc":""},
+						{"id":"09","power":0,"img":"default.png","url":"https://music.zhuolin.wang/","title":"卓林","desc":""},
+						{"id":"10","power":10,"img":"default.png","url":"http://www.musictool.top/","title":"音乐搜索器","desc":""},
+						{"id":"11","power":0,"img":"default.png","url":"https://www.hifini.com/","title":"音乐磁场","desc":""},
+						{"id":"12","power":0,"img":"default.png","url":"http://music.y444.cn/#/","title":"下歌吧","desc":""},
+						{"id":"13","power":0,"img":"default.png","url":"http://www.runker.cool/music.html","title":"行客听歌","desc":""}
 					]
 				},
 				{
@@ -225,12 +229,13 @@ link=
 						{"id":"08","power":0,"img":"default.png","url":"http://www.zongheng.com/","title":"纵横中文网","desc":""},
 						{"id":"09","power":0,"img":"default.png","url":"http://www.jjwxc.net/","title":"晋江文学城","desc":""},
 						{"id":"10","power":0,"img":"default.png","url":"https://www.readnovel.com/","title":"小说阅读网","desc":""},
-						{"id":"11","power":0,"img":"default.png","url":"https://www.xxsy.net/","title":"潇湘书院","desc":""},
-						{"id":"12","power":0,"img":"default.png","url":"https://www.xs8.cn/","title":"言情小说吧","desc":""},
-						{"id":"13","power":0,"img":"default.png","url":"https://www.hongxiu.com/","title":"红袖添香","desc":""},
-						{"id":"14","power":0,"img":"default.png","url":"http://yuedu.yuewen.com/","title":"阅文阅读","desc":""},
-						{"id":"15","power":0,"img":"default.png","url":"http://www.famiyou.com/","title":"发米友","desc":""},
-						{"id":"16","power":0,"img":"default.png","url":"http://pdfzj.cn/","title":"PDF之家","desc":""}
+						{"id":"11","power":0,"img":"default.png","url":"https://www.jiubojx.com/","title":"文墨中文网","desc":""},
+						{"id":"12","power":0,"img":"default.png","url":"https://www.xxsy.net/","title":"潇湘书院","desc":""},
+						{"id":"13","power":0,"img":"default.png","url":"https://www.xs8.cn/","title":"言情小说吧","desc":""},
+						{"id":"14","power":0,"img":"default.png","url":"https://www.hongxiu.com/","title":"红袖添香","desc":""},
+						{"id":"15","power":0,"img":"default.png","url":"http://yuedu.yuewen.com/","title":"阅文阅读","desc":""},
+						{"id":"16","power":0,"img":"default.png","url":"http://www.famiyou.com/","title":"发米友","desc":""},
+						{"id":"17","power":0,"img":"default.png","url":"http://pdfzj.cn/","title":"PDF之家","desc":""}
 					]
 				},
 				{
@@ -405,7 +410,8 @@ link=
 						{"id":"11","power":0,"img":"default.png","url":"https://www.heikeblog.com/","title":"黑客入门","desc":""},
 						{"id":"12","power":0,"img":"default.png","url":"https://www.ghxi.com/","title":"果核剥壳","desc":""},
 						{"id":"13","power":0,"img":"default.png","url":"https://www.dujin.org/","title":"缙哥哥","desc":""},
-						{"id":"14","power":0,"img":"default.png","url":"https://blog.btstu.cn/","title":"缥缈","desc":""}
+						{"id":"14","power":0,"img":"default.png","url":"https://blog.btstu.cn/","title":"缥缈","desc":""},
+						{"id":"15","power":10,"img":"default.png","url":"https://www.yijingying.com/","title":"前线乐园","desc":""}
 					]
 				},
 				{
@@ -553,7 +559,8 @@ link=
 						{"id":"09","power":0,"img":"default.png","url":"http://nows.fun/","title":"毒鸡汤","desc":""},
 						{"id":"10","power":0,"img":"default.png","url":"https://www.xuanpai.com/","title":"玄派网","desc":""},
 						{"id":"11","power":0,"img":"default.png","url":"https://nazo.games/","title":"谜题","desc":""},
-						{"id":"12","power":0,"img":"default.png","url":"https://nazo.one-story.cn/","title":"NazoGame","desc":""}
+						{"id":"12","power":0,"img":"default.png","url":"https://nazo.one-story.cn/","title":"NazoGame","desc":""},
+						{"id":"13","power":0,"img":"default.png","url":"https://color.method.ac/","title":"色彩游戏","desc":""}
 					]
 				}
 			]
