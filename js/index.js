@@ -147,38 +147,6 @@ $(function(){
 			}
 		}
 		
-		// 右击菜单
-		$('.header-login').on('contextmenu',function(event){
-			event.preventDefault();
-			var pos_X=event.pageX+5;//文档左边距离
-			var pos_Y=event.pageY+5;//文档顶部距离
-			var doc_X=$(window).scrollLeft();//网页左边距离
-			var doc_Y=$(window).scrollTop();//网页顶部距离
-			var menu_logout='<div class="header-login-menu" style="display:none;"><ul><li class="menu_help">帮助</li><li class="menu_quit">退出</li></ul></div>';
-			var menu_login='<div class="header-login-menu" style="display:none;"><ul><li class="menu_help">帮助</li></ul></div>';
-			$('.header-login-menu').remove();
-			$('.header-login').text()=='高级模式'?$('.header-login').after(menu_login):$('.header-login').after(menu_logout);
-			console.log(pos_X,pos_Y,doc_X,doc_Y);
-			$('.header-login-menu').css({left:pos_X-doc_X,top:pos_Y-doc_Y}).show();
-			$('.menu_help').off().on('click',function(){
-				alert('【管理员】权限值:100\n【普通用户】权限值:10\n【测试用户】权限值:0')
-			});
-			$('.menu_quit').off().on('click',function(){
-				$('.header-login').text('高级模式');
-				jsonData.key='';
-				jsonData.value='';
-				jsonData.power=0;
-				jsonData.last_power=0;
-				window.localStorage.setItem('bk_tool_devmode',JSON.stringify(jsonData));
-			});
-		});
-		$('.header-login .header-login-menu').off().on('mouseleave',function(){
-			$('.header-login-menu').remove();
-		});
-		$(document).on('click',function(){
-			$('.header-login-menu').remove();
-		})
-
 		bk_tool_devmode=window.localStorage.getItem('bk_tool_devmode');
 		var getpw=bk_tool_devmode!=null&bk_tool_devmode!=undefined?JSON.parse(bk_tool_devmode).power:0;
 		var power=JSON.parse(bk_tool_devmode).power;
@@ -213,5 +181,36 @@ $(function(){
 			window.open(src);
 		});
 	});
-
+	
+	// 右击菜单
+	$('.header-login').on('contextmenu',function(event){
+		event.preventDefault();
+		var pos_X=event.pageX+5;//文档左边距离
+		var pos_Y=event.pageY+5;//文档顶部距离
+		var doc_X=$(window).scrollLeft();//网页左边距离
+		var doc_Y=$(window).scrollTop();//网页顶部距离
+		var menu_logout='<div class="header-login-menu" style="display:none;"><ul><li class="menu_help">帮助</li><li class="menu_quit">退出</li></ul></div>';
+		var menu_login='<div class="header-login-menu" style="display:none;"><ul><li class="menu_help">帮助</li></ul></div>';
+		$('.header-login-menu').remove();
+		$('.header-login').text()=='高级模式'?$('.header-login').after(menu_login):$('.header-login').after(menu_logout);
+		console.log(pos_X,pos_Y,doc_X,doc_Y);
+		$('.header-login-menu').css({left:pos_X-doc_X,top:pos_Y-doc_Y}).show();
+		$('.menu_help').off().on('click',function(){
+			alert('【管理员】权限值:100\n【普通用户】权限值:10\n【测试用户】权限值:0')
+		});
+		$('.menu_quit').off().on('click',function(){
+			$('.header-login').text('高级模式');
+			jsonData.key='';
+			jsonData.value='';
+			jsonData.power=0;
+			jsonData.last_power=0;
+			window.localStorage.setItem('bk_tool_devmode',JSON.stringify(jsonData));
+		});
+	});
+	$('.header-login .header-login-menu').off().on('mouseleave',function(){
+		$('.header-login-menu').remove();
+	});
+	$(document).on('click',function(){
+		$('.header-login-menu').remove();
+	});
 });
