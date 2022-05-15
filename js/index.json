@@ -218,32 +218,33 @@ link=
 					"tag_name":"阅读",
 					"tag_index":"40",
 					"tag_box":[
-						{"id":"00","power":0,"img":"default.png","url":"https://weread.qq.com/","title":"微信读书","desc":""},
-						{"id":"01","power":0,"img":"default.png","url":"https://www.qidian.com/","title":"起点中文网","desc":""},
-						{"id":"02","power":0,"img":"default.png","url":"https://www.qdmm.com/","title":"起点女生网","desc":""},
-						{"id":"03","power":0,"img":"default.png","url":"http://yc.ireader.com.cn/","title":"掌阅","desc":""},
-						{"id":"04","power":0,"img":"default.png","url":"http://book.km.com/","title":"七猫小说","desc":""},
-						{"id":"05","power":0,"img":"default.png","url":"https://fanqienovel.com/","title":"番茄小说","desc":""},
-						{"id":"06","power":0,"img":"default.png","url":"http://yunqi.qq.com/","title":"云起书院","desc":""},
-						{"id":"07","power":0,"img":"default.png","url":"http://chuangshi.qq.com/","title":"创世中文网","desc":""},
-						{"id":"08","power":0,"img":"default.png","url":"http://www.zongheng.com/","title":"纵横中文网","desc":""},
-						{"id":"09","power":0,"img":"default.png","url":"http://www.jjwxc.net/","title":"晋江文学城","desc":""},
-						{"id":"10","power":0,"img":"default.png","url":"https://www.readnovel.com/","title":"小说阅读网","desc":""},
-						{"id":"11","power":0,"img":"default.png","url":"https://www.jiubojx.com/","title":"文墨中文网","desc":""},
-						{"id":"12","power":0,"img":"default.png","url":"https://www.xxsy.net/","title":"潇湘书院","desc":""},
-						{"id":"13","power":0,"img":"default.png","url":"https://www.xs8.cn/","title":"言情小说吧","desc":""},
-						{"id":"14","power":0,"img":"default.png","url":"https://www.hongxiu.com/","title":"红袖添香","desc":""},
-						{"id":"15","power":0,"img":"default.png","url":"http://yuedu.yuewen.com/","title":"阅文阅读","desc":""},
-						{"id":"16","power":0,"img":"default.png","url":"http://www.famiyou.com/","title":"发米友","desc":""},
-						{"id":"17","power":0,"img":"default.png","url":"http://pdfzj.cn/","title":"PDF之家","desc":""}
+						{"id":"00","power":0,"img":"40-1.png","url":"https://weread.qq.com/","title":"微信读书","desc":"正版书籍小说免费阅读"},
+						{"id":"01","power":0,"img":"40-2.png","url":"https://www.qidian.com/","title":"起点中文网","desc":"小说,小说网,最新热门小说"},
+						{"id":"02","power":0,"img":"40-3.png","url":"https://www.qdmm.com/","title":"起点女生网","desc":"适合女生看小说推荐_好看的女生小说推荐"},
+						{"id":"03","power":0,"img":"40-4.png","url":"http://yc.ireader.com.cn/","title":"掌阅","desc":"原创小说在线阅读,最新最热小说排行,最好看的原创小说网"},
+						{"id":"04","power":0,"img":"40-5.png","url":"http://book.km.com/","title":"七猫小说","desc":"免费小说推荐-好看的小说-全本免费小说排行榜"},
+						{"id":"05","power":0,"img":"40-6.png","url":"https://fanqienovel.com/","title":"番茄小说","desc":"番茄小说旗下原创文学平台"},
+						{"id":"06","power":0,"img":"40-7.png","url":"http://yunqi.qq.com/","title":"云起书院","desc":"免费小说,玄幻小说,武侠小说,青春小说"},
+						{"id":"07","power":0,"img":"40-8.png","url":"http://chuangshi.qq.com/","title":"创世中文网","desc":"好看的小说网络尽在创世中文网"},
+						{"id":"08","power":0,"img":"40-9.png","url":"http://www.zongheng.com/","title":"纵横中文网","desc":"小说网-纵横中文网|最热门的免费小说网"},
+						{"id":"09","power":0,"img":"40-10.png","url":"http://www.jjwxc.net/","title":"晋江文学城","desc":"女性网络文学原创基地"},
+						{"id":"10","power":0,"img":"40-11.png","url":"https://www.readnovel.com/","title":"小说阅读网","desc":"小说阅读网_阅文集团旗下网站"},
+						{"id":"11","power":0,"img":"40-12.png","url":"https://www.jiubojx.com/","title":"文墨中文网","desc":"九博精选 - 新九博精选 - 九博精选免费小说"},
+						{"id":"12","power":0,"img":"40-13.png","url":"https://www.xxsy.net/","title":"潇湘书院","desc":"总裁小说,重生小说,种田文,都市言情,穿越小说"},
+						{"id":"13","power":0,"img":"40-14.png","url":"https://www.xs8.cn/","title":"言情小说吧","desc":"言情小说吧_阅文集团旗下网站"},
+						{"id":"14","power":0,"img":"40-15.png","url":"https://www.hongxiu.com/","title":"红袖添香","desc":"红袖读书_好看的小说免费阅读 - 阅文集团旗下网站"},
+						{"id":"15","power":0,"img":"40-16.png","url":"http://yuedu.yuewen.com/","title":"阅文阅读","desc":"阅文悦读 | 阅文集团版权图书品牌展示"},
+						{"id":"16","power":0,"img":"40-17.png","url":"http://www.famiyou.com/","title":"发米友","desc":"6miv小说网_铅笔小说_阅读网下载_网盘资源"},
+						{"id":"17","power":0,"img":"40-18.png","url":"http://pdfzj.cn/","title":"PDF之家","desc":"免费高清PDF电子书下载"}
 					]
 				},
 				{
 					"tag_name":"知识资讯",
 					"tag_index":"41",
 					"tag_box":[
-						{"id":"00","power":0,"img":"default.png","url":"https://jikipedia.com/","title":"小鸡词典","desc":""},
-						{"id":"01","power":0,"img":"default.png","url":"https://www.anyknew.com/#/","title":"Anyknew","desc":""}
+						{"id":"00","power":0,"img":"41-1.png","url":"https://jikipedia.com/","title":"小鸡词典","desc":"好多梗啊！"},
+						{"id":"01","power":0,"img":"41-2.png","url":"https://www.anyknew.com/#/","title":"Anyknew","desc":"效率资讯 - 高效读新闻, 5分钟遍历全网热点"},
+						{"id":"02","power":0,"img":"41-3.png","url":"https://www.zhihu.com/","title":"知乎","desc":"有问题,就会有答案"}
 					]
 				}
 			]
@@ -355,7 +356,7 @@ link=
 					"tag_index":"60",
 					"tag_box":[
 						{"id":"00","power":0,"img":"default.png","url":"https://www.csdn.net/","title":"CSDN","desc":""},
-						{"id":"01","power":0,"img":"default.png","url":"https://www.runoob.com/","title":"菜鸟教程","desc":""},
+						{"id":"01","power":0,"img":"60-2.png","url":"https://www.runoob.com/","title":"菜鸟教程","desc":"学的不仅是技术，更是梦想！"},
 						{"id":"02","power":0,"img":"default.png","url":"https://www.w3school.com.cn/","title":"W3school","desc":""},
 						{"id":"03","power":0,"img":"default.png","url":"https://www.cnblogs.com/","title":"博客园","desc":""},
 						{"id":"04","power":0,"img":"default.png","url":"https://www.bccn.net/","title":"编程中国","desc":""},
@@ -484,7 +485,7 @@ link=
 					"tag_index":"72",
 					"tag_box":[
 						{"id":"00","power":0,"img":"default.png","url":"https://www.bootcss.com/p/font-awesome/","title":"Font","desc":""},
-						{"id":"01","power":0,"img":"default.png","url":"https://www.iconfont.cn/","title":"IconFont","desc":""},
+						{"id":"01","power":0,"img":"72-2.png","url":"https://www.iconfont.cn/","title":"IconFont","desc":"阿里巴巴矢量图标库"},
 						{"id":"02","power":0,"img":"default.png","url":"https://icomoon.io/","title":"IcoMoon","desc":""},
 						{"id":"03","power":0,"img":"default.png","url":"https://fontawesome.dashgame.com/","title":"Font4.7","desc":""},
 						{"id":"04","power":0,"img":"default.png","url":"https://fa5.dashgame.com/#/","title":"Font5.11","desc":""},

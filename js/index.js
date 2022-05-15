@@ -69,9 +69,8 @@ $(function(){
 });
 $(function(){
 	// 左侧列表切换
-	var index_list=0;
-	var index_tag=0;
-	var id=0;
+	var index_list=0,index_tag=0,id='00',index_box='00';
+	var log={list:index_list,tag:index_tag,id:'00',box:index_box};
 	$('.leftside ul').on('click','li',function(){
 		$(this).addClass('left-active').siblings().removeClass('left-active');
 		index_list=$(this).index();
@@ -81,6 +80,9 @@ $(function(){
 		$('.main-tag').eq($(this).index()+1).find('.tag-list').first().addClass('tag-active').siblings().removeClass('tag-active');
 		// box切换
 		$('.main-box[data-id='+id+']').css('display','').siblings('.main-box').css('display','none');
+		log.list=index_list;log.tag=index_tag;log.id=id;
+		console.clear();
+		console.log(log);
 	});
 
 	// 顶部标签切换
@@ -90,6 +92,9 @@ $(function(){
 		id=index_list.toString()+index_tag.toString();
 		// box切换
 		$('.main-box[data-id='+id+']').css('display','').siblings('.main-box').css('display','none');
+		log.list=index_list;log.tag=index_tag;log.id=id;
+		console.clear();
+		console.log(log);
 	});
 
 	// 赋值点击链接
@@ -103,6 +108,15 @@ $(function(){
 		// $(this).attr('href',src);
 		// $(location).prop({'href':src},{'target':'_blank'});
 		// $(location).attr({'href':src},{'target':'_blank'});
+	});
+
+	// 取消右击菜单mouseenter
+	$('.box-list').off('contextmenu').on('contextmenu',function(event){
+		event.preventDefault();//取消默认程序
+		index_box=$(this).data('boxid').toString();
+		log.box=index_box;
+		console.clear();
+		console.log(log);
 	});
 });
 $(function(){
@@ -184,7 +198,7 @@ $(function(){
 	
 	// 右击菜单
 	$('.header-login').on('contextmenu',function(event){
-		event.preventDefault();
+		event.preventDefault();//取消默认程序
 		var pos_X=event.pageX+5;//文档左边距离
 		var pos_Y=event.pageY+5;//文档顶部距离
 		var doc_X=$(window).scrollLeft();//网页左边距离
