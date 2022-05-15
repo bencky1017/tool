@@ -23,19 +23,19 @@
 	-webkit-box-shadow: inset 0 0 10px rgba(255,255,255,1);
 	background:linear-gradient(to top, #a77d4d, #FBEB91,#2EC2FF,#8375FF);
 }
-	/*定义水平滚动条的轨道颜色、内阴影及圆角*/
-	::-webkit-scrollbar-track:horizontal{
-		border-radius: 5px;
-		-webkit-box-shadow: inset 0 0 12px rgba(0,0,0,1);
-		background:linear-gradient(to left, #a77d4d, #FBEB91,#2EC2FF,#8375FF);
-		display:none;
-	}
-	/*定义水平滑块颜色、内阴影及圆角*/
-	::-webkit-scrollbar-thumb:horizontal{
-		border-radius: 5px;
-		-webkit-box-shadow: inset 0 0 10px rgba(255,255,255,1);
-		background:linear-gradient(to left, #a77d4d, #FBEB91,#2EC2FF,#8375FF);
-	}
+/*定义水平滚动条的轨道颜色、内阴影及圆角*/
+::-webkit-scrollbar-track:horizontal{
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0 0 12px rgba(0,0,0,1);
+	background:linear-gradient(to left, #a77d4d, #FBEB91,#2EC2FF,#8375FF);
+	display:none;
+}
+/*定义水平滑块颜色、内阴影及圆角*/
+::-webkit-scrollbar-thumb:horizontal{
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0 0 10px rgba(255,255,255,1);
+	background:linear-gradient(to left, #a77d4d, #FBEB91,#2EC2FF,#8375FF);
+}
 /*定义两端按钮的样式*/
 ::-webkit-scrollbar-button {
 	background-color:#343d46;
@@ -61,8 +61,10 @@ body{
 	height: 50px;
 	background-color: #3D444B;
 	z-index: 3;
-	display: flex;
+	/*display: flex;*/
 	justify-content: center;
+	display: inline-grid;
+	grid-template-columns: auto auto auto;
 }
 .headerborder{
 	/*background-color: #68a68a50;*/
@@ -81,7 +83,8 @@ body{
 	/*background-color: #bd5bd550;*/
 }
 .header-sign{
-	width: 790px;
+	width: 54vw;
+	max-width: 790px;
 	height: 28px;/*border占2px*/
 	margin: 10px 40px 10px 10px;
 	line-height: 30px;
@@ -91,6 +94,16 @@ body{
 	/*background-color: #5bdbd550;*/
 
 }
+/*.header-sign{
+	width: 790px;
+	height: 28px;border占2px*/
+	/*margin: 10px 40px 10px 10px;
+	line-height: 30px;
+	font-size: 14px;
+	text-align: center;
+	border: 1px solid #aaa;
+	/*background-color: #5bdbd550;
+}*/
 .header-login{
 	width: 90px;
 	margin: 10px 10px 10px 10px;
@@ -164,7 +177,7 @@ body{
 }
 
 .mainpart{/*主区块*/
-	width: 1000px;
+	width: auto;
 	/*min-height: 800px;*/
 	margin: 0 10px 0 10px;
 	/*background-color: #a9b;*/
@@ -209,7 +222,7 @@ body{
 	height: auto;
 	width: auto;
 	max-width: 1000px;
-	min-width: 100%;
+	/*min-width: 100%;*/
 	padding: 10px;
 	margin-bottom: 20px;
 	border-radius: 10px;
@@ -224,7 +237,7 @@ body{
 }
 .box-list{
 	width: 15.22vw;
-	min-width: 80px;
+	min-width: 120px;
 	max-width: 200px;
 	height: 140px;
 	margin: 10px;
@@ -255,6 +268,7 @@ body{
 	background-repeat: no-repeat;
 	width: 48px;
 	height: 48px;
+	-webkit-user-drag: none;
 }
 .list-text{
 	/*background-color: #ab9;*/
@@ -278,4 +292,88 @@ body{
 	display: block;
 	overflow: visible;
 	text-overflow:inherit;
+}
+
+
+/* 响应式布局 - 媒体查询 */
+@media screen and (max-width: 900px){
+	.boxboder{
+		grid-template-columns: auto auto auto;
+	}
+	.box-list{
+		width: 20vw;
+		min-width: 60px;
+		max-width: 180px;
+	}
+}
+
+@media screen and (max-width: 720PX){
+	.header-title{
+		width: 90px;
+		line-height: 30px;
+		font-size: 16px;
+	}
+	.header-sign{
+		width: 42vw;
+		min-width: 150px;
+		margin-right: 10px;
+		font-size: 12px;
+		white-space:nowrap;
+		/*display: -webkit-box;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
+		text-overflow:ellipsis;*/
+		overflow: hidden;
+	}
+	.sign_a{
+		position: relative;
+		animation-name: scroll;
+		animation-duration: 10s;
+		animation-timing-function: linear;
+		animation-delay: 2s;
+		animation-iteration-count: infinite;
+		animation-direction: normal;/*alternate逆向播放*/
+		animation-play-state: running;
+	}
+	.header-login{
+		width: 60px;
+		font-size: 12px;
+	}
+	.leftside{/*左侧栏*/
+		min-width: 70px;
+	}
+	.left-list{
+		height: 24px;
+		line-height: 24px;
+		padding-left: 10px;
+		padding-right: 10px;
+		font-size: 12px;
+	}
+	.tag-list{
+		height: 28px;
+		width: 64px;
+		line-height: 28px;
+		font-size: 12px;
+	}
+	.boxboder{
+		grid-template-columns: auto auto;
+	}
+	.box-list{
+		width: 25vw;
+		min-width: 90px;
+		max-width: 180px;
+	}
+	.list-img img{
+		width: 32px;
+		height: 32px;
+	}
+	.text-title{
+		font-size: 13px;
+		margin: 10px 0;
+	}
+}
+
+@keyframes scroll{/*header-sign*/
+	from{left: 100%;}
+	to{left: -100%;}
 }
