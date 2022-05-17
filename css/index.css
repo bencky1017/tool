@@ -177,7 +177,8 @@ body{
 }
 
 .mainpart{/*主区块*/
-	width: auto;
+ 	/*width: auto; */
+	width: 1020px;
 	/*min-height: 800px;*/
 	margin: 0 10px 0 10px;
 	/*background-color: #a9b;*/
