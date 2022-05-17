@@ -4,6 +4,7 @@ link=
 		{"dfc8c49971421736382a600e2bf6421d":"管理员","power":100},
 		{"bf95573285e8a92129c3a6244b555fc7":"普通用户","power":10},
 		{"1ecb1ec1a723a7be4c3c5acaf94d9be7":"测试用户","power":0},
+		{"e06143ea6c6bbd08df599076afa6fa66":"特殊用户","power":100}
 	],
 	"list":[
 		{
