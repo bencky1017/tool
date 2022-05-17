@@ -108,6 +108,7 @@ body{
 	width: 90px;
 	margin: 10px 10px 10px 10px;
 	line-height: 30px;
+	white-space:nowrap;
 	font-size: 14px;
 	text-align: center;
 	/*background-color: #9db46590;*/
@@ -310,7 +311,8 @@ body{
 
 @media screen and (max-width: 720PX){
 	.header-title{
-		width: 90px;
+		width: 80px;
+		white-space:nowrap;
 		line-height: 30px;
 		font-size: 16px;
 	}
@@ -337,7 +339,8 @@ body{
 		animation-play-state: running;
 	}
 	.header-login{
-		width: 60px;
+		width: auto;
+		padding: 0 10px 0 10px;   
 		font-size: 12px;
 	}
 	.leftside{/*左侧栏*/
