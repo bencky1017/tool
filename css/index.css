@@ -350,6 +350,10 @@ body{
 		padding-right: 10px;
 		font-size: 12px;
 	}
+	.mainpart{/*主区块*/
+ 	    width: auto;
+	    margin: 0 10px 0 0px;
+    	}
 	.tag-list{
 		height: 28px;
 		width: 64px;
