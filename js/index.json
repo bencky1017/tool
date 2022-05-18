@@ -169,7 +169,8 @@ link=
 						{"id":"04","power":0,"img":"22-5.png","url":"https://shimo.im/","title":"石墨文档","desc":""},
 						{"id":"05","power":0,"img":"default.png","url":"https://www.kancloud.cn","title":"看云文档","desc":""},
 						{"id":"06","power":0,"img":"22-7.png","url":"https://www.yuque.com/","title":"语雀","desc":""},
-						{"id":"07","power":0,"img":"22-8.png","url":"https://www.notion.so/product","title":"Notion","desc":""}
+						{"id":"07","power":0,"img":"22-8.png","url":"https://www.notion.so/product","title":"Notion","desc":""},
+						{"id":"08","power":0,"img":"22-9.png","url":"http://www.yunshangxiezuo.com/web/","title":"云上写作","desc":"专为写作打造的效率工具"}
 					]
 				}
 			]
