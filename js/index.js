@@ -228,3 +228,7 @@ $(function(){
 		$('.header-login-menu').remove();
 	});
 });
+$(function(){
+	var str={"id":"aaa","power":0,"img":"default.png","url":"xxxxxxxxxxxxx","title":"xxxxxx","desc":"xxxxxx"};
+	
+});

@@ -4,7 +4,7 @@ link=
 		{"dfc8c49971421736382a600e2bf6421d":"管理员","power":100},
 		{"bf95573285e8a92129c3a6244b555fc7":"普通用户","power":10},
 		{"1ecb1ec1a723a7be4c3c5acaf94d9be7":"测试用户","power":0},
-		{"e06143ea6c6bbd08df599076afa6fa66":"特殊用户","power":100}
+		{"e06143ea6c6bbd08df599076afa6fa66":"特殊用户","power":19}
 	],
 	"list":[
 		{
@@ -272,7 +272,8 @@ link=
 						{"id":"11","power":0,"img":"default.png","url":"https://www.bejson.com/","title":"BeJSON","desc":""},
 						{"id":"12","power":0,"img":"default.png","url":"https://www.hwkxk.cn/","title":"抖音去水印","desc":""},
 						{"id":"13","power":10,"img":"default.png","url":"http://douyin.0746120.com/","title":"抖音提取","desc":""},
-						{"id":"14","power":10,"img":"default.png","url":"https://www.0746120.com/","title":"遗忘收藏夹","desc":""}
+						{"id":"14","power":10,"img":"default.png","url":"https://www.0746120.com/","title":"遗忘收藏夹","desc":""},
+						{"id":"15","power":0,"img":"50-16.png","url":"https://www.bmcx.com/","title":"便民查询网","desc":"免费查询工具大全 - 原51240便民查询网"}
 					]
 				},
 				{
@@ -289,7 +290,9 @@ link=
 						{"id":"07","power":0,"img":"default.png","url":"http://www.huochaipro.com/","title":"火柴","desc":""},
 						{"id":"08","power":0,"img":"default.png","url":"http://www.upupoo.com/","title":"啊噗啊噗","desc":""},
 						{"id":"09","power":0,"img":"default.png","url":"https://miao.wondershare.cn/","title":"万兴喵影","desc":""},
-						{"id":"10","power":0,"img":"default.png","url":"https://huifu.wondershare.cn/","title":"万兴恢复","desc":""}
+						{"id":"10","power":0,"img":"default.png","url":"https://huifu.wondershare.cn/","title":"万兴恢复","desc":""},
+						{"id":"11","power":0,"img":"default.png","url":"http://sfz.uzuzuz.com/","title":"在线身份证号码生成器","desc":"在线身份证号码生成器"},
+						{"id":"12","power":0,"img":"default.png","url":"https://qq.ip138.com/idsearch/index.asp","title":"身份证查询","desc":"身份证号大全和真实姓名_身份证归属地查询"}
 					]
 				},
 				{
@@ -341,11 +344,16 @@ link=
 					]
 				},
 				{
-					"tag_name":"搜索器",
+					"tag_name":"导航搜索",
 					"tag_index":"56",
 					"tag_box":[
 						{"id":"00","power":0,"img":"default.png","url":"http://baiduyun.6miu.com/","title":"盘搜搜","desc":""},
-						{"id":"01","power":0,"img":"default.png","url":"https://www.lingfengyun.com/","title":"凌风云搜","desc":""}
+						{"id":"01","power":0,"img":"default.png","url":"https://www.lingfengyun.com/","title":"凌风云搜","desc":""},
+						{"id":"02","power":0,"img":"56-3.png","url":"https://xydh.fun/","title":"炫猿","desc":"炫猿"},
+						{"id":"03","power":0,"img":"default.png","url":"https://lackk.com/","title":"兰客lackk","desc":"兰客创意分享创意及美的一切"},
+						{"id":"04","power":0,"img":"56-5.png","url":"https://siguso.com/","title":"思谷搜","desc":"一站式聚合搜索导航，资源搜索神器！"},
+						{"id":"05","power":0,"img":"56-6.png","url":"https://ailongmiao.com/","title":"龙喵网","desc":"有态度的网址导航"},
+						{"id":"06","power":0,"img":"56-7.png","url":"https://toobigdata.com/","title":"TooBigData","desc":"宇宙网红数据库"}
 					]
 				}
 			]
@@ -367,7 +375,9 @@ link=
 						{"id":"07","power":0,"img":"default.png","url":"https://i.rexdf.org/","title":"Rexdf","desc":""},
 						{"id":"08","power":0,"img":"default.png","url":"https://www.lanrenzhijia.com/","title":"懒人之家","desc":""},
 						{"id":"09","power":0,"img":"default.png","url":"https://github.com/","title":"Github","desc":""},
-						{"id":"10","power":0,"img":"default.png","url":"https://gitee.com/","title":"Gitee","desc":""}
+						{"id":"10","power":0,"img":"default.png","url":"https://gitee.com/","title":"Gitee","desc":""},
+						{"id":"11","power":0,"img":"60-12.png","url":"https://www.right.com.cn/forum/","title":"恩山","desc":"恩山无线论坛"},
+						{"id":"12","power":0,"img":"60-13.png","url":"https://www.jiapu.tv/bbs/","title":"家谱","desc":"姓氏字辈库_字辈查询就来这里！"}
 					]
 				},
 				{
@@ -380,7 +390,10 @@ link=
 						{"id":"03","power":0,"img":"default.png","url":"https://www.bootcss.com/","title":"Bootstrap","desc":""},
 						{"id":"04","power":0,"img":"default.png","url":"http://helloweb.wang/","title":"HelloWeb","desc":""},
 						{"id":"05","power":0,"img":"default.png","url":"https://www.dowebok.com/","title":"Dowebok","desc":""},
-						{"id":"06","power":0,"img":"default.png","url":"http://www.cssmoban.com/","title":"模板之家","desc":""}
+						{"id":"06","power":0,"img":"default.png","url":"http://www.cssmoban.com/","title":"模板之家","desc":""},
+						{"id":"07","power":0,"img":"61-8.png","url":"https://www.yuque.com/moeunion/wordpress","title":"零基础学WordPress","desc":"《零基础学WordPress》·语雀"},
+						{"id":"08","power":0,"img":"61-9.svg","url":"http://www.mediaelementjs.com/","title":"MediaElement.js","desc":"HTML5 video and audio unification framework"},
+						{"id":"09","power":0,"img":"61-10.png","url":"http://httpbin.org/","title":"httpbin","desc":"httpbin"}
 					]
 				},
 				{
@@ -414,7 +427,17 @@ link=
 						{"id":"12","power":0,"img":"default.png","url":"https://www.ghxi.com/","title":"果核剥壳","desc":""},
 						{"id":"13","power":0,"img":"default.png","url":"https://www.dujin.org/","title":"缙哥哥","desc":""},
 						{"id":"14","power":0,"img":"default.png","url":"https://blog.btstu.cn/","title":"缥缈","desc":""},
-						{"id":"15","power":10,"img":"default.png","url":"https://www.yijingying.com/","title":"前线乐园","desc":""}
+						{"id":"15","power":10,"img":"default.png","url":"https://www.yijingying.com/","title":"前线乐园","desc":""},
+						{"id":"16","power":0,"img":"63-17.png","url":"https://www.gamemir2.com/","title":"RiPro","desc":"V2主题_资源站首选优质内容变现主题实践"},
+						{"id":"17","power":0,"img":"63-18.png","url":"https://rpg.blue/","title":"Project1","desc":"RPG Maker MV"},
+						{"id":"18","power":0,"img":"63-19.png","url":"https://zhangshuqiao.org/","title":"米米的博客","desc":"米米的博客"},
+						{"id":"19","power":10,"img":"63-19.png","url":"https://github.com/stevenjoezhang","title":"米米博客GitHub","desc":"米米的博客"},
+						{"id":"20","power":0,"img":"63-20.png","url":"https://www.fghrsh.net/post/123.html","title":"FGHRSH的博客","desc":"网页添加 Live2D 看板娘"},
+						{"id":"21","power":0,"img":"63-21.png","url":"https://ayjcsgm.github.io/","title":"HQP的个人博客","desc":"HQP的个人博客"},
+						{"id":"22","power":0,"img":"63-22.png","url":"https://www.mabiji.com/","title":"码笔记","desc":"程序员代码笔记_程序猿编程经验分享"},
+						{"id":"23","power":0,"img":"63-23.png","url":"https://www.stubbornhuang.com/","title":"StubbornHuang博客","desc":"StubbornHuang Blog - 镌刻我的足迹"},
+						{"id":"24","power":0,"img":"63-24.png","url":"https://palerock.cn/","title":"苍石居","desc":"苍石居"}
+						,{"id":"aaa","power":0,"img":"default.png","url":"https://www.icode9.com/","title":"ICode9","desc":"专注技术文章分享"}
 					]
 				},
 				{
@@ -439,7 +462,20 @@ link=
 						{"id":"15","power":0,"img":"default.png","url":"https://api.uomg.com/","title":"优启梦","desc":""},
 						{"id":"16","power":0,"img":"default.png","url":"https://cdn.seovx.com/","title":"夏沫","desc":""},
 						{"id":"17","power":10,"img":"default.png","url":"https://www.aeqx.cn/","title":"夏沫原","desc":""},
-						{"id":"18","power":0,"img":"default.png","url":"https://www.woyaocha.net/","title":"我要查","desc":""}
+						{"id":"18","power":0,"img":"default.png","url":"https://www.woyaocha.net/","title":"我要查","desc":""},
+						{"id":"19","power":0,"img":"64-20.png","url":"https://hitokoto.cn/","title":"一言","desc":"Hitokoto - 一言"},
+						{"id":"20","power":0,"img":"64-21.png","url":"https://www.ipify.org/","title":"IP 地址 API","desc":"一个简单的公共 IP 地址 API"}
+					]
+				},
+				{
+					"tag_name":"接单",
+					"tag_index":"65",
+					"tag_box":[
+						{"id":"00","power":0,"img":"65-1.png","url":"https://suzhou.zbj.com/","title":"猪八戒网","desc":"中国领先的企业服务平台"},
+						{"id":"01","power":0,"img":"65-2.png","url":"https://www.proginn.com/","title":"程序员客栈","desc":"领先的程序员自由远程工作平台"},
+						{"id":"02","power":0,"img":"65-3.png","url":"https://www.clouderwork.com/","title":"云沃客","desc":"远程工作_在线商机_软件定制一站式云工作平台"},
+						{"id":"03","power":0,"img":"65-4.png","url":"https://www.jfh.com/","title":"解放号","desc":"伴行数字化转型的软件产业互联网"},
+						{"id":"04","power":0,"img":"65-5.png","url":"https://codemart.com/","title":"码市","desc":"互联网软件外包服务平台"}
 					]
 				}
 			]
@@ -479,7 +515,9 @@ link=
 						{"id":"14","power":0,"img":"default.png","url":"https://www.ztupic.com/","title":"众图网","desc":""},
 						{"id":"15","power":0,"img":"default.png","url":"https://www.hituyu.com/","title":"图鱼","desc":""},
 						{"id":"16","power":0,"img":"default.png","url":"https://www.aigei.com/","title":"爱给网","desc":""},
-						{"id":"17","power":0,"img":"default.png","url":"http://www.6m5m.com/","title":"6M5M","desc":""}
+						{"id":"17","power":0,"img":"default.png","url":"http://www.6m5m.com/","title":"6M5M","desc":""},
+						{"id":"18","power":0,"img":"71-19.png","url":"https://www.byzhihuo.com/","title":"不移之火","desc":"CG模型下载网_动画CG模型设计_游戏CG下载_CG动漫"},
+						{"id":"19","power":0,"img":"71-20.jpg","url":"http://5moe.top/","title":"我萌网","desc":"插画约稿招聘-插画素材-我萌网为更多中小画师创造价值 (゜-゜)つ"}
 					]
 				},
 				{
@@ -543,7 +581,12 @@ link=
 					"tag_box":[
 						{"id":"00","power":0,"img":"default.png","url":"http://html5.huceo.com/","title":"网页娱乐","desc":""},
 						{"id":"01","power":0,"img":"default.png","url":"http://g.vsane.com/game/22/","title":"比翼游戏","desc":""},
-						{"id":"02","power":0,"img":"default.png","url":"https://www.yikm.net/","title":"小霸王","desc":""}
+						{"id":"02","power":0,"img":"default.png","url":"https://www.yikm.net/","title":"小霸王","desc":""},
+						{"id":"03","power":10,"img":"90-4.png","url":"https://www.4399e.cn/","title":"极品辅助","desc":"造梦西游5修改器-4399辅助大全-4399最强辅助"},
+						{"id":"04","power":10,"img":"90-5.png","url":"https://www.4399jg.com/","title":"瑾哥辅助","desc":"瑾哥辅助大全,瑾哥打造最流行的网页游戏辅助"},
+						{"id":"05","power":20,"img":"90-5.png","url":"https://www.4399fz.com","title":"瑾哥辅助原","desc":"瑾哥辅助大全,瑾哥打造最流行的网页游戏辅助"},
+						{"id":"06","power":0,"img":"default.png","url":"https://www.3dmgame.com/","title":"3DM游戏网","desc":"单机游戏_单机游戏下载_单机游戏大全中文版下载"}
+						,{"id":"aaa","power":0,"img":"default.png","url":"https://www.xiaoxingjie.com/","title":"小幸修改器","desc":"小幸修改器官方网站-小幸软件工作室"}
 					]
 				},
 				{
@@ -563,7 +606,14 @@ link=
 						{"id":"10","power":0,"img":"default.png","url":"https://www.xuanpai.com/","title":"玄派网","desc":""},
 						{"id":"11","power":0,"img":"default.png","url":"https://nazo.games/","title":"谜题","desc":""},
 						{"id":"12","power":0,"img":"default.png","url":"https://nazo.one-story.cn/","title":"NazoGame","desc":""},
-						{"id":"13","power":0,"img":"default.png","url":"https://color.method.ac/","title":"色彩游戏","desc":""}
+						{"id":"13","power":0,"img":"default.png","url":"https://color.method.ac/","title":"色彩游戏","desc":""},
+						{"id":"14","power":0,"img":"91-15.png","url":"http://www.lonelystar.org/","title":"星空之旅","desc":"植物大战僵尸JAVASCRIPT版|JSPVZ"},
+						{"id":"15","power":0,"img":"91-16.png","url":"https://astroneer.fandom.com/wiki/Astroneer_Wiki","title":"Astroneer百科","desc":"Astroneer官方维基"},
+						{"id":"16","power":0,"img":"91-17.png","url":"https://store.epicgames.com/zh-CN/free-games","title":"Epic免费游戏","desc":"每周都有免费游戏 | Epic游戏商城"},
+						{"id":"17","power":0,"img":"91-18.png","url":"https://www.heishenhua.com/","title":"黑神话：悟空","desc":"西游题材·单机·动作·角色扮演游戏"},
+						{"id":"18","power":0,"img":"default.png","url":"https://www.iwo.im/","title":"让我帮你百度一下","desc":"让我帮你百度一下"},
+						{"id":"19","power":0,"img":"default.png","url":"https://lmbtfy.cn/","title":"Let Me Baidu That For You","desc":"Let Me Baidu That For You"}
+						,{"id":"aaa","power":0,"img":"default.png","url":"https://nazo.games/","title":"謎.Games","desc":"謎.Games"}
 					]
 				}
 			]
