@@ -150,27 +150,27 @@ link=
 			"name":"文本办公",
 			"tag":[
 				{
-					"tag_name":"文本编辑",
+					"tag_name":"文档软件",
 					"tag_index":"20",
 					"tag_box":[
-						{"id":"00","power":0,"img":"20-1.png","url":"https://typora.io/","title":"Typora","desc":""},
-						{"id":"01","power":0,"img":"20-2.png","url":"http://www.sublimetext.com/3","title":"SublimeText","desc":""},
-						{"id":"02","power":0,"img":"20-3.png","url":"https://www.dcloud.io/hbuilderx.html","title":"HBuilderX","desc":""}
+						{"id":"00","power":0,"img":"20-1.png","url":"https://www.wps.cn/","title":"WPS","desc":""},
+						{"id":"01","power":0,"img":"20-2.png","url":"https://www.kdocs.cn/","title":"金山文档","desc":""},
+						{"id":"02","power":0,"img":"default.png","url":"https://xiezuocat.com/#/","title":"秘塔猫","desc":""},
+						{"id":"03","power":0,"img":"20-4.png","url":"https://docs.qq.com/desktop/","title":"腾讯文档","desc":""},
+						{"id":"04","power":0,"img":"20-5.png","url":"https://shimo.im/","title":"石墨文档","desc":""},
+						{"id":"05","power":0,"img":"default.png","url":"https://www.kancloud.cn","title":"看云文档","desc":""},
+						{"id":"06","power":0,"img":"20-7.png","url":"https://www.yuque.com/","title":"语雀","desc":""},
+						{"id":"07","power":0,"img":"20-8.png","url":"https://www.notion.so/product","title":"Notion","desc":""},
+						{"id":"08","power":0,"img":"20-9.png","url":"http://www.yunshangxiezuo.com/web/","title":"云上写作","desc":"专为写作打造的效率工具"}
 					]
 				},
 				{
-					"tag_name":"文档软件",
+					"tag_name":"文本编辑",
 					"tag_index":"21",
 					"tag_box":[
-						{"id":"00","power":0,"img":"22-1.png","url":"https://www.wps.cn/","title":"WPS","desc":""},
-						{"id":"01","power":0,"img":"22-2.png","url":"https://www.kdocs.cn/","title":"金山文档","desc":""},
-						{"id":"02","power":0,"img":"default.png","url":"https://xiezuocat.com/#/","title":"秘塔猫","desc":""},
-						{"id":"03","power":0,"img":"22-4.png","url":"https://docs.qq.com/desktop/","title":"腾讯文档","desc":""},
-						{"id":"04","power":0,"img":"22-5.png","url":"https://shimo.im/","title":"石墨文档","desc":""},
-						{"id":"05","power":0,"img":"default.png","url":"https://www.kancloud.cn","title":"看云文档","desc":""},
-						{"id":"06","power":0,"img":"22-7.png","url":"https://www.yuque.com/","title":"语雀","desc":""},
-						{"id":"07","power":0,"img":"22-8.png","url":"https://www.notion.so/product","title":"Notion","desc":""},
-						{"id":"08","power":0,"img":"22-9.png","url":"http://www.yunshangxiezuo.com/web/","title":"云上写作","desc":"专为写作打造的效率工具"}
+						{"id":"00","power":0,"img":"21-1.png","url":"https://typora.io/","title":"Typora","desc":""},
+						{"id":"01","power":0,"img":"21-2.png","url":"http://www.sublimetext.com/3","title":"SublimeText","desc":""},
+						{"id":"02","power":0,"img":"21-3.png","url":"https://www.dcloud.io/hbuilderx.html","title":"HBuilderX","desc":""}
 					]
 				}
 			]
@@ -179,12 +179,18 @@ link=
 			"name":"软件",
 			"tag":[
 				{
-					"tag_name":"压缩软件",
+					"tag_name":"云盘",
 					"tag_index":"30",
 					"tag_box":[
-						{"id":"00","power":0,"img":"30-1.png","url":"http://www.bandisoft.com/bandizip/","title":"Bandizip","desc":""},
-						{"id":"01","power":0,"img":"30-2.png","url":"http://www.winrar.com.cn/","title":"WinRAR","desc":""},
-						{"id":"02","power":0,"img":"30-3.png","url":"https://sparanoid.com/lab/7z/","title":"7-zip","desc":""}
+						{"id":"00","power":0,"img":"30-1.png","url":"https://pan.baidu.com/","title":"百度网盘","desc":""},
+						{"id":"01","power":0,"img":"30-2.png","url":"https://www.aliyundrive.com/","title":"阿里云盘","desc":""},
+						{"id":"02","power":0,"img":"30-3.png","url":"https://www.weiyun.com/","title":"腾讯微云","desc":""},
+						{"id":"03","power":0,"img":"30-4.png","url":"https://www.jianguoyun.com/","title":"坚果云","desc":""},
+						{"id":"04","power":0,"img":"30-5.png","url":"https://cloud.189.cn/","title":"天翼云盘","desc":""},
+						{"id":"05","power":0,"img":"30-6.png","url":"https://www.wenshushu.cn/","title":"文叔叔","desc":""},
+						{"id":"06","power":0,"img":"30-7.png","url":"https://lanzou.com/","title":"蓝奏云","desc":""},
+						{"id":"07","power":0,"img":"30-8.png","url":"https://cowtransfer.com/","title":"奶牛快传","desc":""},
+						{"id":"08","power":0,"img":"30-9.png","url":"https://www.quqi.com/","title":"曲奇云盘","desc":""}
 					]
 				},
 				{
@@ -197,18 +203,12 @@ link=
 					]
 				},
 				{
-					"tag_name":"云盘",
+					"tag_name":"压缩软件",
 					"tag_index":"32",
 					"tag_box":[
-						{"id":"00","power":0,"img":"32-1.png","url":"https://pan.baidu.com/","title":"百度网盘","desc":""},
-						{"id":"01","power":0,"img":"32-2.png","url":"https://www.aliyundrive.com/","title":"阿里云盘","desc":""},
-						{"id":"02","power":0,"img":"32-3.png","url":"https://www.weiyun.com/","title":"腾讯微云","desc":""},
-						{"id":"03","power":0,"img":"32-4.png","url":"https://www.jianguoyun.com/","title":"坚果云","desc":""},
-						{"id":"04","power":0,"img":"32-5.png","url":"https://cloud.189.cn/","title":"天翼云盘","desc":""},
-						{"id":"05","power":0,"img":"32-6.png","url":"https://www.wenshushu.cn/","title":"文叔叔","desc":""},
-						{"id":"06","power":0,"img":"32-7.png","url":"https://lanzou.com/","title":"蓝奏云","desc":""},
-						{"id":"07","power":0,"img":"32-8.png","url":"https://cowtransfer.com/","title":"奶牛快传","desc":""},
-						{"id":"08","power":0,"img":"32-9.png","url":"https://www.quqi.com/","title":"曲奇云盘","desc":""}
+						{"id":"00","power":0,"img":"32-1.png","url":"http://www.bandisoft.com/bandizip/","title":"Bandizip","desc":""},
+						{"id":"01","power":0,"img":"32-2.png","url":"http://www.winrar.com.cn/","title":"WinRAR","desc":""},
+						{"id":"02","power":0,"img":"32-3.png","url":"https://sparanoid.com/lab/7z/","title":"7-zip","desc":""}
 					]
 				}
 			]
@@ -238,6 +238,9 @@ link=
 						{"id":"15","power":0,"img":"40-16.png","url":"http://yuedu.yuewen.com/","title":"阅文阅读","desc":"阅文悦读 | 阅文集团版权图书品牌展示"},
 						{"id":"16","power":0,"img":"40-17.png","url":"http://www.famiyou.com/","title":"发米友","desc":"6miv小说网_铅笔小说_阅读网下载_网盘资源"},
 						{"id":"17","power":0,"img":"40-18.png","url":"http://pdfzj.cn/","title":"PDF之家","desc":"免费高清PDF电子书下载"}
+						,{"id":"aaa","power":0,"img":"default.png","url":"https://b.faloo.com/","title":"飞卢小说网","desc":"同人小说【好看的免费小说网】"}
+						,{"id":"aaa","power":0,"img":"default.png","url":"https://www.tadu.com/","title":"塔读小说网","desc":"免费阅读最新热门小说"}
+						,{"id":"aaa","power":0,"img":"default.png","url":"https://www.lkong.com/","title":"龙空","desc":"龙的天空 - 龙空"}
 					]
 				},
 				{
