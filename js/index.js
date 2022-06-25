@@ -118,8 +118,15 @@ $(function(){
 		console.clear();
 		console.log(log);
 	});
-});
-$(function(){
+
+	// 取消高级模式登录框
+	$('.btn-cancel,.mask-help .btn-sure').on('click',function(event){
+		event.stopPropagation();/*阻止冒泡事件*/
+		$('.mask').css('display','none');
+	});
+
+// });
+// $(function(){
 	// 高级模式
 	var jsonData={'key':'','value':'','power':0,'last_power':0};
 	window.localStorage.setItem('bk_tool_devmode',JSON.stringify(jsonData));
@@ -127,6 +134,23 @@ $(function(){
 
 	// 登录权限
 	$('.header-login').on('click',function(){
+		$('.mask').css('display','');
+		$('.mask-login').css('display','');
+		$('.mask-help').css('display','none');
+		$('.mask-input').val('');
+		$('.mask-tip').html('').css('color','#f00');
+	});
+
+	// 按键绑定
+	$('.mask-input').on('focus keydown',function(event){
+		// 你按了键盘enter
+		if (event.keyCode == 13){
+			$('.mask-login .btn-sure').click();
+		}
+	});
+
+	// 高级模式确认
+	$('.mask-login .btn-sure').on('click',function(){
 		var bk_tool_devmode=window.localStorage.getItem('bk_tool_devmode');
 		console.log(bk_tool_devmode);
 
@@ -136,7 +160,8 @@ $(function(){
 			window.localStorage.setItem('bk_tool_devmode',JSON.stringify(jsonData));
 		}
 
-		let login_prompt=prompt("请输入密钥序列：",123);
+		// let login_prompt=prompt("请输入密钥序列：",123);
+		let login_prompt=$('.mask-input').val();
 		let get_key=login_prompt==''|login_prompt==null?0:mdbk(login_prompt);
 
 		var isexist=0;//密钥存在判断
@@ -144,7 +169,25 @@ $(function(){
 			for (var key in link.keylist[i]){
 				if (get_key == key) {
 					isexist=1;//密钥存在列表中
-					alert("【"+link.keylist[i][key]+":"+link.keylist[i].power+"】"+"身份确认，进入高级模式！\n【刷新页面后重置身份！】");
+					// alert("【"+link.keylist[i][key]+":"+link.keylist[i].power+"】"+"身份确认，进入高级模式！\n【刷新页面后重置身份！】");
+					// $('.mask-help-tip').html().css('color','#19f');
+					$('.mask-login,.mask').css('display','none');
+					// $('.mask-help').css('display','');//提示语
+					new NoticeJs({
+						title: 'Success',                 //标题：可为null
+					    text: '【'+link.keylist[i][key]+':'+link.keylist[i].power+'】'+'<br>身份确认，进入高级模式！<br>【刷新页面后重置身份！】',     //提示内容：不建议为空
+						type: 'success',                    //类型：四种类型
+						position: 'topCenter',            //定位：九种定位
+						timeout: 30,                      //消失时间：30表示3秒
+						progressBar: true,                //进度条：布尔值
+						closeWith: ['button','click'],    //关闭方式：按钮、点击
+						animation: {                      //引用外部特效
+						    open: 'animated bounceIn',    //必须加animated
+						    close: 'animated bounceOut'   //后面跟特效名
+						},
+						modal: false,                     //模态框：背景不可点击
+						scroll: null                      //
+					}).show();
 
 					//添加localStorage存储
 					jsonData.key=get_key;
@@ -155,7 +198,22 @@ $(function(){
 					$('.header-login').text(jsonData.value+':'+jsonData.power);
 					break;
 				}else if (isexist == 0 & i == link.keylist.length-1) {
-					alert("密钥错误！联系管理员确认密钥。");
+					// $('.mask-tip').html("密钥错误！联系管理员确认密钥。");
+					new NoticeJs({
+						title: 'Error',                        //标题：可为null
+					    text: '密钥错误！联系管理员确认密钥。',     //提示内容：不建议为空
+						type: 'error',                    //类型：四种类型
+						position: 'topCenter',            //定位：九种定位
+						timeout: 15,                      //消失时间：30表示3秒
+						progressBar: true,                //进度条：布尔值
+						closeWith: ['button'],    //关闭方式：按钮、点击
+						animation: {                      //引用外部特效
+						    open: 'animated bounceIn',    //必须加animated
+						    close: 'animated bounceOut'   //后面跟特效名
+						},
+						modal: true,                     //模态框：背景不可点击
+						scroll: null                      //
+					}).show();
 					break;
 				}
 			}
@@ -187,12 +245,22 @@ $(function(){
 				}
 			}
 		}
-		$('.box-list[data-power^="pw-"]').css({'background-color':"#1d212c"});
+		// 高级权限下的样式
+		$('.box-list[data-power^="pw-"]').addClass('advance');
 		$('.box-list').off('click').on('click',function(){
 			var id_mainbox=$(this).parents('.main-box').data('id').toString();
 			var id_boxlist=$(this).data('boxid').toString();
 			var src=link.list[id_mainbox[0]].tag[id_mainbox[1]].tag_box[parseInt(id_boxlist)].url
 			window.open(src);
+		});
+
+		// 取消右击菜单mouseenter
+		$('.box-list').off('contextmenu').on('contextmenu',function(event){
+			event.preventDefault();//取消默认程序
+			index_box=$(this).data('boxid').toString();
+			log.box=index_box;
+			console.clear();
+			console.log(log);
 		});
 	});
 	
