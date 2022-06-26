@@ -231,8 +231,8 @@ body{
 .mbtest:hover,
 .advance:hover{
     text-transform: uppercase;
-	transition: 0.2s;
-	background: linear-gradient(90deg,#fbc2eb,#a6c1ee 51%,#fbc2eb) 200% / 200%;
+	transition: 0.3s;
+	background: linear-gradient(90deg,#fbc2eb,#a6c1ee 51%,#fbc2eb) 300% / 200%;
 	/*text-shadow: 0 0 5px #666;*/
 	/*box-shadow: 0px 0px 15px 3px  #222;*/
 	box-shadow: 0 0 15px 3px #D980DE!important;
@@ -284,6 +284,9 @@ body{
 	box-shadow: 0px 0px 15px 3px  #222;
 	-webkit-transform: scale(1.05);
 	transform: scale(1.05);
+}
+.box-list:focus{
+	outline: none;
 }
 .list-img{/*4px底边*/
 	display: inline-block;

@@ -98,23 +98,50 @@ $(function(){
 	});
 
 	// 赋值点击链接
+	var id_mainbox='';
+	var id_boxlist='';
+	var src='';
+	var title='';
 	$('.box-list').off('click').on('click',function(){
 		// id=index_list.toString()+index_tag.toString();
 		// console.log(index_list,index_tag,id,$(this).index());
-		var id_mainbox=$(this).parents('.main-box').data('id').toString();
-		var id_boxlist=$(this).data('boxid').toString();
-		var src=link.list[id_mainbox[0]].tag[id_mainbox[1]].tag_box[parseInt(id_boxlist)].url;
-		window.open(src);
+		id_mainbox=$(this).parents('.main-box').data('id').toString();
+		id_boxlist=$(this).data('boxid').toString();
+		src=link.list[id_mainbox[0]].tag[id_mainbox[1]].tag_box[parseInt(id_boxlist)].url;
+		// console.log(src);
+		window.open(src);//打开链接
 		// $(this).attr('href',src);
 		// $(location).prop({'href':src},{'target':'_blank'});
-		// $(location).attr({'href':src},{'target':'_blank'});
+		// $(location).attr({'href':src},{'target':'_blank'});	
 	});
+
+	
+
 
 	// 取消右击菜单mouseenter
 	$('.box-list').off('contextmenu').on('contextmenu',function(event){
 		event.preventDefault();//取消默认程序
 		index_box=$(this).data('boxid').toString();
 		log.box=index_box;
+		let list=link.list[log.id[0]].tag[log.id[1]].tag_index;
+		let box=link.list[log.id[0]].tag[log.id[1]].tag_box[parseInt(index_box)].id;
+
+		// 提示tooltipify
+		$(this).tooltipify({
+			'position': 'bottom',				//定位：有上下左右四个方位
+			'offsetLeft': 50,					//左补偿：增加左侧距离
+			'offsetTop': 0,						//上补偿：增加上侧距离
+			'opacity': 0.8,						//透明度
+			'width': null,						//宽度：数值或null
+			'animationProperty': 'left',		//动画属性：上下左右四个方位
+			'animationOffset': 50,				//偏移量：数值越大，动画属性效果越长
+			'animationDuration': 100,			//持续时间：1000为1秒
+			'showEvent': 'contextmenu',			//显示事件： mouseover,mouseenter,contextmenu 等
+			'hideEvent': 'mouseleave',			//同上 mouseout mouseleave
+			'displayAware': true,				//
+			'content': list+box,				//显示文字：可为null
+			'cssClass' : ''						//样式类
+		});
 		console.clear();
 		console.log(log);
 	});
@@ -175,7 +202,7 @@ $(function(){
 					// $('.mask-help').css('display','');//提示语
 					new NoticeJs({
 						title: 'Success',                 //标题：可为null
-					    text: '【'+link.keylist[i][key]+':'+link.keylist[i].power+'】'+'<br>身份确认，进入高级模式！<br>【刷新页面后重置身份！】',     //提示内容：不建议为空
+						text: '【'+link.keylist[i][key]+':'+link.keylist[i].power+'】'+'<br>身份确认，进入高级模式！<br>【刷新页面后重置身份！】',     //提示内容：不建议为空
 						type: 'success',                    //类型：四种类型
 						position: 'topCenter',            //定位：九种定位
 						timeout: 30,                      //消失时间：30表示3秒
@@ -277,9 +304,28 @@ $(function(){
 		$('.header-login').text()=='高级模式'?$('.header-login').after(menu_login):$('.header-login').after(menu_logout);
 		console.log(pos_X,pos_Y,doc_X,doc_Y);
 		$('.header-login-menu').css({left:pos_X-doc_X,top:pos_Y-doc_Y}).show();
+
+		// 帮助按钮
 		$('.menu_help').off().on('click',function(){
-			alert('【管理员】权限值:100\n【普通用户】权限值:10\n【测试用户】权限值:0')
+			// alert('【管理员】权限值:100\n【普通用户】权限值:10\n【测试用户】权限值:0');
+			new NoticeJs({
+				title: 'Infomation',                 //标题：可为null
+			    text: '【管理员】权限值:100<br>【普通用户】权限值:10<br>【测试用户】权限值:0',     //提示内容：不建议为空
+				type: 'info',                    //类型：四种类型
+				position: 'middleCenter',            //定位：九种定位
+				timeout: 40,                      //消失时间：30表示3秒
+				progressBar: false,                //进度条：布尔值
+				closeWith: ['click','button'],    //关闭方式：按钮、点击
+				animation: {                      //引用外部特效
+				    open: 'animated bounceIn',    //必须加animated
+				    close: 'animated bounceOut'   //后面跟特效名
+				},
+				modal: true,                     //模态框：背景不可点击
+				scroll: null                      //
+			}).show();
 		});
+
+		// 退出按钮
 		$('.menu_quit').off().on('click',function(){
 			$('.header-login').text('高级模式');
 			jsonData.key='';
@@ -287,6 +333,22 @@ $(function(){
 			jsonData.power=0;
 			jsonData.last_power=0;
 			window.localStorage.setItem('bk_tool_devmode',JSON.stringify(jsonData));
+
+			new NoticeJs({
+				title: '',                 //标题：可为null
+			    text: '退出成功',     //提示内容：不建议为空
+				type: 'success',                    //类型：四种类型
+				position: 'topCenter',            //定位：九种定位
+				timeout: 10,                      //消失时间：30表示3秒
+				progressBar: true,                //进度条：布尔值
+				closeWith: ['click'],    //关闭方式：按钮、点击
+				animation: {                      //引用外部特效
+				    open: 'animated bounceIn',    //必须加animated
+				    close: 'animated bounceOutUp'   //后面跟特效名
+				},
+				modal: false,                     //模态框：背景不可点击
+				scroll: null                      //
+			}).show();
 		});
 	});
 	$('.header-login .header-login-menu').off().on('mouseleave',function(){
