@@ -147,7 +147,7 @@ $(function(){
 	});
 
 	// 取消高级模式登录框
-	$('.btn-cancel,.mask-help .btn-sure').on('click',function(event){
+	$('.btn-cancel').on('click',function(event){
 		event.stopPropagation();/*阻止冒泡事件*/
 		$('.mask').css('display','none');
 	});
@@ -163,8 +163,7 @@ $(function(){
 	$('.header-login').on('click',function(){
 		$('.mask').css('display','');
 		$('.mask-login').css('display','');
-		$('.mask-help').css('display','none');
-		$('.mask-input').val('');
+		$('.mask-input').val('').focus();
 		$('.mask-tip').html('').css('color','#f00');
 	});
 
@@ -197,9 +196,7 @@ $(function(){
 				if (get_key == key) {
 					isexist=1;//密钥存在列表中
 					// alert("【"+link.keylist[i][key]+":"+link.keylist[i].power+"】"+"身份确认，进入高级模式！\n【刷新页面后重置身份！】");
-					// $('.mask-help-tip').html().css('color','#19f');
 					$('.mask-login,.mask').css('display','none');
-					// $('.mask-help').css('display','');//提示语
 					new NoticeJs({
 						title: 'Success',                 //标题：可为null
 						text: '【'+link.keylist[i][key]+':'+link.keylist[i].power+'】'+'<br>身份确认，进入高级模式！<br>【刷新页面后重置身份！】',     //提示内容：不建议为空
@@ -246,6 +243,7 @@ $(function(){
 			}
 		}
 		
+		// localStorage参数处理
 		bk_tool_devmode=window.localStorage.getItem('bk_tool_devmode');
 		var getpw=bk_tool_devmode!=null&bk_tool_devmode!=undefined?JSON.parse(bk_tool_devmode).power:0;
 		var power=JSON.parse(bk_tool_devmode).power;
@@ -334,6 +332,9 @@ $(function(){
 			jsonData.last_power=0;
 			window.localStorage.setItem('bk_tool_devmode',JSON.stringify(jsonData));
 
+			//去除权限不够的盒子
+			$('.box-list[data-power^="pw-"]').remove();
+
 			new NoticeJs({
 				title: '',                 //标题：可为null
 			    text: '退出成功',     //提示内容：不建议为空
@@ -341,7 +342,7 @@ $(function(){
 				position: 'topCenter',            //定位：九种定位
 				timeout: 10,                      //消失时间：30表示3秒
 				progressBar: true,                //进度条：布尔值
-				closeWith: ['click'],    //关闭方式：按钮、点击
+				closeWith: [],    //关闭方式：按钮、点击
 				animation: {                      //引用外部特效
 				    open: 'animated bounceIn',    //必须加animated
 				    close: 'animated bounceOutUp'   //后面跟特效名
@@ -357,6 +358,13 @@ $(function(){
 	$(document).on('click',function(){
 		$('.header-login-menu').remove();
 	});
+});
+$(function(){
+	$(document).on('keydown',function(event){
+		if (event.keyCode == 27){//按下Esc
+			$('.mask-login .btn-cancel').click();
+		}
+	})
 });
 $(function(){
 	var str={"id":"aaa","power":0,"img":"default.png","url":"xxxxxxxxxxxxx","title":"xxxxxx","desc":"xxxxxx"};
