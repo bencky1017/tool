@@ -275,7 +275,7 @@ link=
 						{"id":"11","power":0,"img":"default.png","url":"https://www.bejson.com/","title":"BeJSON","desc":""},
 						{"id":"12","power":0,"img":"default.png","url":"https://www.hwkxk.cn/","title":"抖音去水印","desc":""},
 						{"id":"13","power":10,"img":"default.png","url":"http://douyin.0746120.com/","title":"抖音提取","desc":""},
-						{"id":"14","power":10,"img":"default.png","url":"https://www.0746120.com/","title":"遗忘收藏夹","desc":""},
+						{"id":"14","power":50,"img":"default.png","url":"https://www.0746120.com/","title":"遗忘收藏夹","desc":""},
 						{"id":"15","power":0,"img":"50-16.png","url":"https://www.bmcx.com/","title":"便民查询网","desc":"免费查询工具大全 - 原51240便民查询网"}
 					]
 				},
