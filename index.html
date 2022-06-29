@@ -78,11 +78,13 @@
 			<div style="position: fixed;top: 40%;left: 50%;min-width: 300px;width: 50%;max-width: 500px;background: #fff;transform: translate(-50%, -50%);border-radius: 20px;padding: 30px 20px;">
 				<h3 style="color:#000;font-weight: bold;text-align: center;font-size: 24px;">网站公告</h3>
 				<div style="border: solid 1px #ddd;border-radius: 5px;font-size: 16px;margin-top: 26px;line-height: 30px;color: #999;">
-					网站公告代码测试1
+					<!-- 网站公告代码测试1 -->
+					<iframe class="web_notice_frame" src="./notice.html" frameborder="0" style="width: 100%;height: 200px;"></iframe>
 				</div>
-				<a style="display: block;background: #98a3ff;color: #fff;text-align: center;font-weight: bold;font-size: 15px;line-height: 45px;margin: 0 auto;margin-top: 30px;border-radius: 32px;width: 60%;" onclick="javascript:document.querySelector('.web_notice').remove()">我知道了</a>
+				<a style="display: block;background: #98a3ff;color: #fff;text-align: center;font-weight: bold;font-size: 15px;line-height: 45px;margin: 0 auto;margin-top: 30px;border-radius: 32px;width: 60%;cursor: pointer;" onclick="javascript:document.querySelector('.web_notice').style.display='none'">我知道了</a>
 			</div>
 		</div>
+		<div class="web_notice_btn">公告</div>
 	</div>
 	<script type="text/javascript">
 		$.get("https://v1.hitokoto.cn/?c=b&c=d&c=e&c=f&c=g&c=h&c=j&",function(data,status){

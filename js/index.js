@@ -352,17 +352,21 @@ $(function(){
 			}).show();
 		});
 	});
-	$('.header-login .header-login-menu').off().on('mouseleave',function(){
-		$('.header-login-menu').remove();
-	});
+	$('.web_notice_btn').on('click',function(){
+		$('.web_notice').show();
+	})
+});
+$(function(){
+	// 全局快捷键
 	$(document).on('click',function(){
 		$('.header-login-menu').remove();
 	});
-});
-$(function(){
+
 	$(document).on('keydown',function(event){
 		if (event.keyCode == 27){//按下Esc
 			$('.mask-login .btn-cancel').click();
+			$('.header-login-menu').remove();
+			$('.web_notice').css({'display':'none'});
 		}
 	})
 });

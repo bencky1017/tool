@@ -333,8 +333,7 @@ body{
 	background: #00000077;
 	z-index: 5;
 }
-.mask-login,
-.mask-help{
+.mask-login{
 	position: relative;
 	width: 300px;
 	height: auto;
@@ -345,8 +344,7 @@ body{
 	background: #6779A1;
 	text-align: center;
 }
-.mask-login>h2,
-.mask-help>h2{
+.mask-login>h2{
 	padding-top: 20px; 
 	color: #fff;
 }
@@ -361,11 +359,15 @@ body{
 	letter-spacing: 2px;
 	border-radius: 10px;
 }
-::-webkit-input-placeholder{
+.mask-input::-webkit-input-placeholder{
 	color: #aaa;
 }
-.mask-login button,
-.mask-help button{
+.mask-input:focus {
+    outline: -webkit-focus-ring-color auto 0px;
+    outline: -moz-focus-ring-color auto 0px;
+    outline: -ms-focus-ring-color auto 0px;
+}
+.mask-login button{
 	width: 80px;
 	height: 30px;
 	color: #000;
@@ -376,21 +378,17 @@ body{
 	outline-style: none;
 	cursor: pointer;
 }
-.mask-login button:nth-child(1),
-.mask-help button:nth-child(1){
+.mask-login button:nth-child(1){
 	background: #aaa;
 }
-.mask-login button:nth-child(2),
-.mask-help button:nth-child(2){
+.mask-login button:nth-child(2){
 	background: #6cf;
 }
-.mask-login button:nth-child(1):hover,
-.mask-help button:nth-child(1):hover{
+.mask-login button:nth-child(1):hover{
 	background: #f55;
 	color: #fff;
 }
-.mask-login button:nth-child(2):hover,
-.mask-help button:nth-child(2):hover{
+.mask-login button:nth-child(2):hover{
 	background: #0AF;
 	color: #fff;
 }
@@ -399,6 +397,25 @@ body{
 }
 .noticejs-content{
 	color: #fff;
+}
+
+.web_notice_btn{
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 16px;
+	border-radius: 50%;
+	border: solid 2px #ddd;
+	background: #343d46;
+	position: fixed;
+	left: 10px;
+	bottom: 10%;
+	cursor: pointer;
+}
+.web_notice_btn:hover{
+	color: #0AF;
+	border: solid 2px #0af;
 }
 
 /* 响应式布局 - 媒体查询 */
