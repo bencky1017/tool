@@ -6,26 +6,64 @@
 	<title>Notice File</title>
 	<base target="_blank"/>
 	<style type="text/css">
-		body{
-			word-wrap:break-word;
-			margin: 0px  20px;
-		}
-		body::-webkit-scrollbar{
-			display: none;
-		}
-		a,
-		a:link,
-		a:visited{
-			color: #37f;
-		}
+		body{word-wrap:break-word;margin: 0px  20px;color: #fff;}
+		a,a:link,a:visited{color: #5FC3FF;}
+		h1,h2,h3,h4,h5,h6{margin: 10px 0px;}
+		p{margin: 10px 0px;}
+		::-webkit-scrollbar{width: 10px;height: 10px;display: static;}
+		/*定义滚动条的轨道颜色、内阴影及圆角*/
+		::-webkit-scrollbar-track{border-radius: 5px;-webkit-box-shadow: inset 0 0 12px rgba(0,0,0,1);background:linear-gradient(to top, #FF567F, #FBEB91,#2EC2FF,#8375FF);display:none;}
+		/*定义滑块颜色、内阴影及圆角*/
+		::-webkit-scrollbar-thumb{border-radius: 5px;-webkit-box-shadow: inset 0 0 10px rgba(255,255,255,1);background:linear-gradient(to top, #FF567F, #FBEB91,#2EC2FF,#8375FF);}
+		/*定义水平滚动条的轨道颜色、内阴影及圆角*/
+		::-webkit-scrollbar-track:horizontal{border-radius: 5px;-webkit-box-shadow: inset 0 0 12px rgba(0,0,0,1);background:linear-gradient(to left, #FF567F, #FBEB91,#2EC2FF,#8375FF);display:none;}
+		/*定义水平滑块颜色、内阴影及圆角*/
+		::-webkit-scrollbar-thumb:horizontal{border-radius: 5px;-webkit-box-shadow: inset 0 0 10px rgba(255,255,255,1);background:linear-gradient(to left, #FF567F, #FBEB91,#2EC2FF,#8375FF);}
+		/*定义两端按钮的样式*/
+		::-webkit-scrollbar-button {background-color:#343d46;display: none;}
+		/*定义右下角汇合处的样式*/
+		::-webkit-scrollbar-corner {background:#000;} 
+		::-webkit-scrollbar-track-piece {/*background-color: #343d46;*/}
+		.success{}
+		.info{}
+		.warning{}
+		.error{}
 	</style>
 </head>
 <body>
-	<h3 id="date">2022年2月2日&#128073;发布版本v2.2.3&#128072;</h3>
-	<h4 id="title">版本内容&nbsp;&nbsp;(<a href="https://bencky1017.github.io/nav/README/#更新日志">更新日志</a>)</h4>
-	<p><b>优化：</b><br>主题图片：更换背景图片的API<br>搜索条：调整搜索箭头层级关系<br><font color="red">测试功能：可能出现图片无法更换，等待<em>3min</em>后可更换</font></p>
-	<p><b>益智游戏：<a href="https://bencky1017.github.io/endless-bugs/">https://bencky1017.github.io/endless-bugs/</a></b></p>
-	<p><b>纯享模式：<a href="https://bencky1017.github.io/nav/README/#2021年10月17日">2021年10月17日更新日志</a></b></p>
-	<!-- <hr> -->
+	<div>
+		<h4 class="date">0022年6月30日&#128073;持续更新&#128072;</h4>
+		<h4 class="title">版本内容（<a href="#title" target="_self">更新日志</a>)</h4>
+		<p>1.网站收录中</p>
+		<p>2.添加NoticeJS动态弹窗</p>
+		<p>3.添加Tooltipify提示效果</p>
+		<p>4.添加网站公告框</p>
+		<p>5.修改公告引用框Notice文件</p>
+	</div>
+	<div>
+		<h4 class="date">1022年6月30日&#128073;持续更新&#128072;</h4>
+		<h4 class="title">版本内容（<a href="#title" target="_self">更新日志</a>)</h4>
+		<p>1.网站收录中</p>
+		<p>2.添加NoticeJS动态弹窗</p>
+		<p>3.添加Tooltipify提示效果</p>
+		<p>4.添加网站公告框</p>
+		<p>5.修改公告引用框Notice文件</p>
+	</div>
+	<div>
+		<h4 class="date">2022年6月30日&#128073;持续更新&#128072;</h4>
+		<h4 class="title">版本内容（<a href="#title" target="_self">更新日志</a>)</h4>
+		<p>1.网站收录中</p>
+		<p>2.添加NoticeJS动态弹窗</p>
+		<p>3.添加Tooltipify提示效果</p>
+		<p>4.添加网站公告框</p>
+		<p>5.修改公告引用框Notice文件</p>
+	</div>
+	<script type="text/javascript">
+		var divlist=document.getElementsByTagName('div');
+		for (var i = 0; i < divlist.length; i++) {
+			divlist[i].style.display='none';
+		}
+		document.getElementsByTagName('div')[0].style.display='inherit';
+	</script>
 </body>
 </html>
