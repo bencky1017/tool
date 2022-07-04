@@ -67,10 +67,13 @@ $(function(){
 		}
 	}
 });
+
+// 开发查询序列
+var index_list=0,index_tag=0,id='00',index_box='00';
+var log={list:index_list,tag:index_tag,id:'00',box:index_box};
+
 $(function(){
 	// 左侧列表切换
-	var index_list=0,index_tag=0,id='00',index_box='00';
-	var log={list:index_list,tag:index_tag,id:'00',box:index_box};
 	$('.leftside ul').on('click','li',function(){
 		$(this).addClass('left-active').siblings().removeClass('left-active');
 		index_list=$(this).index();
@@ -114,10 +117,10 @@ $(function(){
 		// $(location).prop({'href':src},{'target':'_blank'});
 		// $(location).attr({'href':src},{'target':'_blank'});	
 	});
+});
 
-	
-
-
+$(function(){
+	// 控制操作
 	// 取消右击菜单mouseenter
 	$('.box-list').off('contextmenu').on('contextmenu',function(event){
 		event.preventDefault();//取消默认程序
@@ -125,25 +128,35 @@ $(function(){
 		log.box=index_box;
 		let list=link.list[log.id[0]].tag[log.id[1]].tag_index;
 		let box=link.list[log.id[0]].tag[log.id[1]].tag_box[parseInt(index_box)].id;
-
-		// 提示tooltipify
-		$(this).tooltipify({
-			'position': 'bottom',				//定位：有上下左右四个方位
-			'offsetLeft': 50,					//左补偿：增加左侧距离
-			'offsetTop': 0,						//上补偿：增加上侧距离
-			'opacity': 0.8,						//透明度
-			'width': null,						//宽度：数值或null
-			'animationProperty': 'left',		//动画属性：上下左右四个方位
-			'animationOffset': 50,				//偏移量：数值越大，动画属性效果越长
-			'animationDuration': 100,			//持续时间：1000为1秒
-			'showEvent': 'contextmenu',			//显示事件： mouseover,mouseenter,contextmenu 等
-			'hideEvent': 'mouseleave',			//同上 mouseout mouseleave
-			'displayAware': true,				//
-			'content': list+box,				//显示文字：可为null
-			'cssClass' : ''						//样式类
-		});
 		console.clear();
 		console.log(log);
+	});
+
+	// JTippyJS提示信息
+	$('.box-list').on('contextmenu',function(){
+		var tag_box_id=parseInt($(this).data('boxid').toString());
+		var list_mark=link.list[log.list].tag[log.tag].tag_box[tag_box_id].mark;
+		var len_mark=list_mark.length;
+		var temp_list='';
+		if (len_mark!=0) {
+			for (var i = 0; i < len_mark; i++) {
+				// 修改了a标签的CSS效果 .jt-title a
+				temp_list+='<a href="'+list_mark[i]+'">'+list_mark[i]+'</a>';
+			}
+			$('.jtippy').remove();
+			$(this).jTippy({
+				title: temp_list,        //内容 date-title=显示内容
+				trigger: 'click',               //触发 date-trigger=click,focus,hover,hoverfocus
+				position: 'right',                    //定位 data-position=auto,bottom,top,left,right
+				class: '',                           //类名 
+				theme: 'lt-gray',                      //主题 data-theme=black,white,lt-gray,green,red,blue
+				size: 'tiny',                       //大小 data-size=large,medium,small,tiny
+				backdrop: false,                     //背景 data-backdrop=black,white,blurred,false
+				singleton: true,                     //仅显示一个提示条
+				close_on_outside_click: true,        //点击外部可关闭
+			});
+		}
+		
 	});
 
 	// 取消高级模式登录框
@@ -152,8 +165,8 @@ $(function(){
 		$('.mask').css('display','none');
 	});
 
-// });
-// $(function(){
+});
+$(function(){
 	// 高级模式
 	var jsonData={'key':'','value':'','power':0,'last_power':0};
 	window.localStorage.setItem('bk_tool_devmode',JSON.stringify(jsonData));
@@ -165,14 +178,6 @@ $(function(){
 		$('.mask-login').css('display','');
 		$('.mask-input').val('').focus();
 		$('.mask-tip').html('').css('color','#f00');
-	});
-
-	// 按键绑定
-	$('.mask-input').on('focus keydown',function(event){
-		// 你按了键盘enter
-		if (event.keyCode == 13){
-			$('.mask-login .btn-sure').click();
-		}
 	});
 
 	// 高级模式确认
@@ -249,6 +254,7 @@ $(function(){
 		var power=JSON.parse(bk_tool_devmode).power;
 		var last_power=JSON.parse(bk_tool_devmode).last_power;
 		var boxcount=0;
+		var powercount=0;
 
 		var num_list=link.list.length;//左侧列表数
 		for (var i = 0; i < num_list; i++) {
@@ -257,11 +263,27 @@ $(function(){
 			for (var j = 0; j < num_tag; j++) {
 				var id=i.toString()+j.toString();//data-id
 				var num_box=link.list[i].tag[j].tag_box.length;//对应标签盒子数
+				powercount=0;
+				// 计算权限盒子数
+				for (var m = 0; m < num_box; m++) {
+					if (link.list[i].tag[j].tag_box[m].power!=0) {
+						powercount+=1;
+					}
+				}
+				// console.log(num_box,num_box-powercount);
 				for (var k = 0; k < num_box; k++) {
 					var info=link.list[i].tag[j].tag_box[k];//盒子信息
 					if(info.power>0&info.power<=getpw&(power<last_power?power:last_power)<info.power){
 						var box_list='<div class="box-list" data-boxid="'+info.id+'" data-power="pw-'+info.power+'"><div class="list-img"><img src="img/'+info.img+'" alt=""></div><div class="list-text"><div class="text-title">'+info.title+'</div><div class="text-desc">'+info.desc+'</div></div></div>';
-						$('.main-box[data-id='+id+']').find('.boxboder .box-list').eq(k-1).after(box_list);
+						var temp_boxid=parseInt(info.id)-1;
+						var len_power=$('.main-box[data-id='+id+']').find('.box-list[data-boxid="'+temp_boxid+'"]').length;
+						while(len_power){
+							temp_boxid-=1;
+							len_power=$('.main-box[data-id='+id+']').find('.box-list[data-boxid="'+temp_boxid+'"]').length;
+							console.log(id+'\t'+temp_boxid+'\t'+len_power);
+						}
+						// console.log('后：'+temp_boxid);
+						$('.main-box[data-id='+id+']').find('.box-list[data-boxid="'+(parseInt(info.id)-1)+'"]').after(box_list);
 
 					}else if (info.power>getpw){
 						//去除权限不够的盒子
@@ -352,6 +374,8 @@ $(function(){
 			}).show();
 		});
 	});
+
+	// 公告按钮
 	$('.web_notice_btn').on('click',function(){
 		$('.web_notice').show();
 	})
@@ -368,9 +392,17 @@ $(function(){
 			$('.header-login-menu').remove();
 			$('.web_notice').css({'display':'none'});
 		}
-	})
+	});
+
+	// 按键绑定
+	$('.mask-input').on('focus keydown',function(event){
+		// 你按了键盘enter
+		if (event.keyCode == 13){
+			$('.mask-login .btn-sure').click();
+		}
+	});
+
 });
 $(function(){
 	var str={"id":"aaa","power":0,"img":"default.png","url":"xxxxxxxxxxxxx","title":"xxxxxx","desc":"xxxxxx"};
-	
 });

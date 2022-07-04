@@ -288,6 +288,18 @@ body{
 .box-list:focus{
 	outline: none;
 }
+.box-mark{
+	width: 100px;
+	position: absolute;
+	right: 000px;
+	background: #4d555d;
+	z-index: 3;
+}
+/*对应JTippyJS提示的效果*/
+.jt-title a{
+	display: block;
+	color: #222;
+}
 .list-img{/*4px底边*/
 	display: inline-block;
 	/*background-color: #ffb686;*/
