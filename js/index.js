@@ -131,33 +131,7 @@ $(function(){
 		console.clear();
 		console.log(log);
 	});
-
-	// JTippyJS提示信息
-	$('.box-list').on('contextmenu',function(){
-		var tag_box_id=parseInt($(this).data('boxid').toString());
-		var list_mark=link.list[log.list].tag[log.tag].tag_box[tag_box_id].mark;
-		var len_mark=list_mark.length;
-		var temp_list='';
-		if (len_mark!=0) {
-			for (var i = 0; i < len_mark; i++) {
-				// 修改了a标签的CSS效果 .jt-title a
-				temp_list+='<a href="'+list_mark[i]+'">'+list_mark[i]+'</a>';
-			}
-			$('.jtippy').remove();
-			$(this).jTippy({
-				title: temp_list,        //内容 date-title=显示内容
-				trigger: 'click',               //触发 date-trigger=click,focus,hover,hoverfocus
-				position: 'right',                    //定位 data-position=auto,bottom,top,left,right
-				class: '',                           //类名 
-				theme: 'lt-gray',                      //主题 data-theme=black,white,lt-gray,green,red,blue
-				size: 'tiny',                       //大小 data-size=large,medium,small,tiny
-				backdrop: false,                     //背景 data-backdrop=black,white,blurred,false
-				singleton: true,                     //仅显示一个提示条
-				close_on_outside_click: true,        //点击外部可关闭
-			});
-		}
-		
-	});
+	JTippy();
 
 	// 取消高级模式登录框
 	$('.btn-cancel').on('click',function(event){
@@ -254,37 +228,50 @@ $(function(){
 		var power=JSON.parse(bk_tool_devmode).power;
 		var last_power=JSON.parse(bk_tool_devmode).last_power;
 		var boxcount=0;
-		var powercount=0;
-
 		var num_list=link.list.length;//左侧列表数
+
 		for (var i = 0; i < num_list; i++) {
 			var num_tag=link.list[i].tag.length;//对应列表标签数
 			boxcount+=num_tag;//计算盒子数量
 			for (var j = 0; j < num_tag; j++) {
 				var id=i.toString()+j.toString();//data-id
 				var num_box=link.list[i].tag[j].tag_box.length;//对应标签盒子数
-				powercount=0;
+
 				// 计算权限盒子数
-				for (var m = 0; m < num_box; m++) {
-					if (link.list[i].tag[j].tag_box[m].power!=0) {
-						powercount+=1;
-					}
-				}
-				// console.log(num_box,num_box-powercount);
+				// var powercount=0;
+				// for (var m = 0; m < num_box; m++) {
+				// 	if (link.list[i].tag[j].tag_box[m].power!=0) {
+				// 		powercount+=1;
+				// 	}
+				// }
+				
 				for (var k = 0; k < num_box; k++) {
 					var info=link.list[i].tag[j].tag_box[k];//盒子信息
 					if(info.power>0&info.power<=getpw&(power<last_power?power:last_power)<info.power){
-						var box_list='<div class="box-list" data-boxid="'+info.id+'" data-power="pw-'+info.power+'"><div class="list-img"><img src="img/'+info.img+'" alt=""></div><div class="list-text"><div class="text-title">'+info.title+'</div><div class="text-desc">'+info.desc+'</div></div></div>';
-						var temp_boxid=parseInt(info.id)-1;
+						var box_list='<div class="box-list" data-boxid="'+info.id+
+									'" data-power="pw-'+info.power+
+									'"><div class="list-img"><img src="img/'+info.img+
+									'" alt=""></div><div class="list-text"><div class="text-title">'+info.title+
+									'</div><div class="text-desc">'+info.desc+'</div></div></div>';
+						var infoid=parseInt(info.id)-1;
+						var temp_boxid=infoid.toString().length==1?infoid.toString().lfill(2):infoid.toString();// 前一个盒子id  string
 						var len_power=$('.main-box[data-id='+id+']').find('.box-list[data-boxid="'+temp_boxid+'"]').length;
-						while(len_power){
-							temp_boxid-=1;
-							len_power=$('.main-box[data-id='+id+']').find('.box-list[data-boxid="'+temp_boxid+'"]').length;
-							console.log(id+'\t'+temp_boxid+'\t'+len_power);
+						
+						if (len_power==0) {
+							// 依次查找前面的盒子
+							while(len_power==0&infoid!=-1){
+								infoid-=1;
+								temp_boxid=infoid.toString().length==1?infoid.toString().lfill(2):infoid.toString();
+								len_power=$('.main-box[data-id='+id+']').find('.box-list[data-boxid="'+temp_boxid+'"]').length;
+							}
+							// 第一个权限添加在最开头
+							if (info.id==0) {$('.main-box[data-id='+id+']>div:nth-child(1)').prepend(box_list);}
+							// 前一个盒子存在就添加
+							$('.main-box[data-id='+id+']').find('.box-list[data-boxid="'+temp_boxid+'"]').after(box_list);
+						}else{
+							$('.main-box[data-id='+id+']').find('.box-list[data-boxid="'+temp_boxid+'"]').after(box_list);
 						}
-						// console.log('后：'+temp_boxid);
-						$('.main-box[data-id='+id+']').find('.box-list[data-boxid="'+(parseInt(info.id)-1)+'"]').after(box_list);
-
+						JTippy();// JTippyJS提示信息
 					}else if (info.power>getpw){
 						//去除权限不够的盒子
 						$('.box-list[data-power^="pw-'+info.power+'"]').remove();
@@ -322,7 +309,7 @@ $(function(){
 		var menu_login='<div class="header-login-menu" style="display:none;"><ul><li class="menu_help">帮助</li></ul></div>';
 		$('.header-login-menu').remove();
 		$('.header-login').text()=='高级模式'?$('.header-login').after(menu_login):$('.header-login').after(menu_logout);
-		console.log(pos_X,pos_Y,doc_X,doc_Y);
+		// console.log(pos_X,pos_Y,doc_X,doc_Y);
 		$('.header-login-menu').css({left:pos_X-doc_X,top:pos_Y-doc_Y}).show();
 
 		// 帮助按钮
@@ -403,6 +390,65 @@ $(function(){
 	});
 
 });
-$(function(){
-	var str={"id":"aaa","power":0,"img":"default.png","url":"xxxxxxxxxxxxx","title":"xxxxxx","desc":"xxxxxx"};
-});
+
+//自定义方法：数值左填充，默认为0
+String.prototype.lfill = function(num=undefined) {
+	var len=this.length;
+	var res='';
+	if (num==undefined) {
+		if (len%8!=0) {
+			for (let i = 0; i < 8-len%8; i++) {res+='0';}
+				res+=this;
+		}else{res=this.toString();}
+	}else{
+		if (num<len) {console.error('Uncaught RangeError: String.lfill() radix argument must more than String.length.');}
+		else{
+			for (let i = 0; i < num-len; i++) {res+='0';}
+				res+=this;
+		}
+	}
+	return res;
+};
+//自定义方法：数值右填充，默认为0
+String.prototype.rfill = function(num=undefined) {
+	var len=this.length;
+	var res=this.toString();
+	if (num==undefined) {
+		if (len%8!=0) {
+			for (let i = 0; i < 8-len%8; i++) {res+='0';}
+		}else{res=res;}
+	}else{
+		if (num<len) {console.error('Uncaught RangeError: String.rfill() radix argument must more than String.length.');}
+		else{
+			for (let i = 0; i < num-len; i++) {res+='0';}
+		}
+	}
+	return res;
+};
+// JTippyJS提示信息
+var JTippy=function(){
+	$('.box-list').on('mouseenter',function(){
+		var tag_box_id=parseInt($(this).data('boxid').toString());
+		var list_mark=link.list[log.list].tag[log.tag].tag_box[tag_box_id].mark;
+		var len_mark=list_mark.length;
+		var temp_list='';
+		if (len_mark!=0) {
+			for (var i = 0; i < len_mark; i++) {
+				// 修改了a标签的CSS效果 .jt-title a
+				temp_list+='<a href="'+list_mark[i]+'">'+list_mark[i]+'</a>';
+			}
+			$('.jtippy').remove();
+			$(this).jTippy({
+				title: temp_list,        //内容 date-title=显示内容
+				trigger: 'click',               //触发 date-trigger=click,focus,hover,hoverfocus
+				position: 'right',                    //定位 data-position=auto,bottom,top,left,right
+				class: '',                           //类名 
+				theme: 'lt-gray',                      //主题 data-theme=black,white,lt-gray,green,red,blue
+				size: 'tiny',                       //大小 data-size=large,medium,small,tiny
+				backdrop: false,                     //背景 data-backdrop=black,white,blurred,false
+				singleton: true,                     //仅显示一个提示条
+				close_on_outside_click: true,        //点击外部可关闭
+			});
+		}
+	});
+}
