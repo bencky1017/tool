@@ -131,6 +131,8 @@ $(function(){
 		console.clear();
 		console.log(log);
 	});
+
+	// 提示信息
 	JTippy();
 
 	// 取消高级模式登录框
@@ -139,7 +141,37 @@ $(function(){
 		$('.mask').css('display','none');
 	});
 
+	// 全局快捷键
+	$(document).on('click',function(){
+		$('.header-login-menu').remove();
+	});
+
+	$(document).on('keydown',function(event){
+		if (event.keyCode == 27){//按下Esc
+			$('.mask-login .btn-cancel').click();
+			$('.header-login-menu').remove();
+			$('.web_notice').css({'display':'none'});
+		}
+	});
+
+	// 按键绑定
+	$('.mask-input').on('focus keydown',function(event){
+		// 你按了键盘enter
+		if (event.keyCode == 13){$('.mask-login .btn-sure').click();}
+	});
+
+	// 公告按钮
+	$('.web_notice_btn').on('click',function(){$('.web_notice').show();});
+
+	// 更新内容公告提示
+	Update();
+
+	// 展开往期日志
+	$('.web_notice_frame .title span').on('click',function(){
+
+	});
 });
+
 $(function(){
 	// 高级模式
 	var jsonData={'key':'','value':'','power':0,'last_power':0};
@@ -361,34 +393,6 @@ $(function(){
 			}).show();
 		});
 	});
-
-	// 公告按钮
-	$('.web_notice_btn').on('click',function(){
-		$('.web_notice').show();
-	})
-});
-$(function(){
-	// 全局快捷键
-	$(document).on('click',function(){
-		$('.header-login-menu').remove();
-	});
-
-	$(document).on('keydown',function(event){
-		if (event.keyCode == 27){//按下Esc
-			$('.mask-login .btn-cancel').click();
-			$('.header-login-menu').remove();
-			$('.web_notice').css({'display':'none'});
-		}
-	});
-
-	// 按键绑定
-	$('.mask-input').on('focus keydown',function(event){
-		// 你按了键盘enter
-		if (event.keyCode == 13){
-			$('.mask-login .btn-sure').click();
-		}
-	});
-
 });
 
 //自定义方法：数值左填充，默认为0
@@ -409,6 +413,7 @@ String.prototype.lfill = function(num=undefined) {
 	}
 	return res;
 };
+
 //自定义方法：数值右填充，默认为0
 String.prototype.rfill = function(num=undefined) {
 	var len=this.length;
@@ -425,6 +430,7 @@ String.prototype.rfill = function(num=undefined) {
 	}
 	return res;
 };
+
 // JTippyJS提示信息
 var JTippy=function(){
 	$('.box-list').on('mouseenter',function(){
@@ -451,4 +457,83 @@ var JTippy=function(){
 			});
 		}
 	});
-}
+};
+
+// 更新内容公告提示
+var Update=function(){
+	// 更新记录初始化
+	var note=link.update[0];// 更新信息表
+	var note_date=note.date;// 日期
+	var note_time=note.time;// 转时间戳
+	var note_title=note.title;// 标题
+	var list_content=note.content;// 内容表
+	var len_content=list_content.length;// 表长度
+
+	$('.web_notice_frame').append('<h4 class="date">'+note_date+'</h4><h4 class="title">'+note_title+'</h4>');
+	for (var i = 0; i < len_content; i++) {
+		if (list_content[i]!='') {
+			$('.web_notice_frame').append('<p>'+(i+1)+'.'+list_content[i]+'</p>');
+		}else continue;
+	}
+
+	// 公告更新提示初始化
+	var bk_notice_tip=localStorage.getItem('bk_notice_tip');
+	if (bk_notice_tip!=null&bk_notice_tip!=undefined) {
+		bk_notice_tip=JSON.parse(bk_notice_tip);
+		bk_notice_tip.newUpdate=parseInt(new Date(note_time).getTime()/1000);// 此次时间戳
+		bk_notice_tip.msgNum=len_content!=bk_notice_tip.msgNum?len_content:bk_notice_tip.msgNum;
+		window.localStorage.setItem('bk_notice_tip',JSON.stringify(bk_notice_tip));
+
+		if (bk_notice_tip.newUpdate>bk_notice_tip.lastUpdate) {
+			bk_notice_tip.isclick=false;
+			window.localStorage.setItem('bk_notice_tip',JSON.stringify(bk_notice_tip));
+			if (!bk_notice_tip.isclick) {// 更新信息数
+				var notice_tip='<i class="notice_tip"></i>';
+				$('.notice_tip').remove();
+				$('.web_notice_btn').append(notice_tip);
+				$('.notice_tip').text(bk_notice_tip.msgNum);
+			}else {$('.notice_tip').remove();}
+		}
+	}else{
+		var new_stamp=parseInt(new Date(note_time).getTime()/1000);// 此次时间戳
+		var last_stamp=0;
+		var jsonUpdate={isclick:false,newUpdate:new_stamp,lastUpdate:last_stamp,msgNum:len_content};
+		window.localStorage.setItem('bk_notice_tip',JSON.stringify(jsonUpdate));
+		bk_notice_tip=JSON.parse(localStorage.getItem('bk_notice_tip'));
+		console.log(bk_notice_tip);
+	}
+
+	var isclick=function(){
+		if (!bk_notice_tip.isclick) {// 更新信息数
+			var notice_tip='<i class="notice_tip"></i>';
+			$('.notice_tip').remove();
+			$('.web_notice_btn').append(notice_tip);
+			$('.notice_tip').text(bk_notice_tip.msgNum);
+		}else {$('.notice_tip').remove();}
+	};
+	isclick();
+
+	var change=function(){
+		if (bk_notice_tip.newUpdate>bk_notice_tip.lastUpdate) {
+			isclick();
+			bk_notice_tip.lastUpdate=bk_notice_tip.newUpdate;// 新值替换旧值
+			window.localStorage.setItem('bk_notice_tip',JSON.stringify(bk_notice_tip));
+		}
+	};
+
+	// isclick操作
+	$('.web_notice_btn').on('click',function(){
+		bk_notice_tip.isclick=true;
+		window.localStorage.setItem('bk_notice_tip',JSON.stringify(bk_notice_tip));
+		change();
+
+	})
+	
+	// console.group('时间戳\t\t\t\t'+		last_stamp);//'2022-7-10 14:41:35'
+	// console.log('toString\t\t\t'+		new Date(note_time).toString());
+	// console.log('toTimeString\t\t'+		new Date(note_time).toTimeString());
+	// console.log('toDateString\t\t'+		new Date(note_time).toDateString());
+	// console.log('toLocaleString\t\t'+	new Date(note_time).toLocaleString());
+	// console.log('toLocaleDateString\t'+	new Date(note_time).toLocaleDateString());
+	// console.groupEnd();
+};
