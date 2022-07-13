@@ -457,6 +457,13 @@ body{
 	border-radius: 10px;
 	background: #CC0000;
 }
+.notice_list_old{
+	border: dashed 5px #0af;
+	border-radius: 15px;
+	padding: 10px;
+	margin: 0px 10px 10px 0px;
+	background: #00aaff77;
+}
 
 /* 响应式布局 - 媒体查询 */
 @media screen and (max-width: 900px){

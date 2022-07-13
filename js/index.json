@@ -238,10 +238,10 @@ link=
 						{"id":"14","power":0,"img":"40-15.png","url":"https://www.hongxiu.com/","title":"红袖添香","desc":"红袖读书_好看的小说免费阅读 - 阅文集团旗下网站","mark":[]},
 						{"id":"15","power":0,"img":"40-16.png","url":"http://yuedu.yuewen.com/","title":"阅文阅读","desc":"阅文悦读 | 阅文集团版权图书品牌展示","mark":[]},
 						{"id":"16","power":0,"img":"40-17.png","url":"http://www.famiyou.com/","title":"发米友","desc":"6miv小说网_铅笔小说_阅读网下载_网盘资源","mark":[]},
-						{"id":"17","power":0,"img":"40-18.png","url":"http://pdfzj.cn/","title":"PDF之家","desc":"免费高清PDF电子书下载","mark":[]}
-						,{"id":"aaa","power":0,"img":"default.png","url":"https://b.faloo.com/","title":"飞卢小说网","desc":"同人小说【好看的免费小说网】","mark":[]}
-						,{"id":"aaa","power":0,"img":"default.png","url":"https://www.tadu.com/","title":"塔读小说网","desc":"免费阅读最新热门小说","mark":[]}
-						,{"id":"aaa","power":0,"img":"default.png","url":"https://www.lkong.com/","title":"龙空","desc":"龙的天空 - 龙空","mark":[]}
+						{"id":"17","power":0,"img":"40-18.png","url":"http://pdfzj.cn/","title":"PDF之家","desc":"免费高清PDF电子书下载","mark":[]},
+						{"id":"18","power":0,"img":"default.png","url":"https://b.faloo.com/","title":"飞卢小说网","desc":"同人小说【好看的免费小说网】","mark":[]},
+						{"id":"19","power":0,"img":"default.png","url":"https://www.tadu.com/","title":"塔读小说网","desc":"免费阅读最新热门小说","mark":[]},
+						{"id":"20","power":0,"img":"default.png","url":"https://www.lkong.com/","title":"龙空","desc":"龙的天空 - 龙空","mark":[]}
 					]
 				},
 				{
@@ -440,8 +440,8 @@ link=
 						{"id":"21","power":0,"img":"63-21.png","url":"https://ayjcsgm.github.io/","title":"HQP的个人博客","desc":"HQP的个人博客","mark":[]},
 						{"id":"22","power":0,"img":"63-22.png","url":"https://www.mabiji.com/","title":"码笔记","desc":"程序员代码笔记_程序猿编程经验分享","mark":[]},
 						{"id":"23","power":0,"img":"63-23.png","url":"https://www.stubbornhuang.com/","title":"StubbornHuang博客","desc":"StubbornHuang Blog - 镌刻我的足迹","mark":[]},
-						{"id":"24","power":0,"img":"63-24.png","url":"https://palerock.cn/","title":"苍石居","desc":"苍石居","mark":[]}
-						,{"id":"aaa","power":0,"img":"default.png","url":"https://www.icode9.com/","title":"ICode9","desc":"专注技术文章分享","mark":[]}
+						{"id":"24","power":0,"img":"63-24.png","url":"https://palerock.cn/","title":"苍石居","desc":"苍石居","mark":[]},
+						{"id":"25","power":0,"img":"default.png","url":"https://www.icode9.com/","title":"ICode9","desc":"专注技术文章分享","mark":[]}
 					]
 				},
 				{
@@ -589,8 +589,8 @@ link=
 						{"id":"03","power":10,"img":"90-4.png","url":"https://www.4399e.cn/","title":"极品辅助","desc":"造梦西游5修改器-4399辅助大全-4399最强辅助","mark":[]},
 						{"id":"04","power":10,"img":"90-5.png","url":"https://www.4399jg.com/","title":"瑾哥辅助","desc":"瑾哥辅助大全,瑾哥打造最流行的网页游戏辅助","mark":[]},
 						{"id":"05","power":20,"img":"90-5.png","url":"https://www.4399fz.com","title":"瑾哥辅助原","desc":"瑾哥辅助大全,瑾哥打造最流行的网页游戏辅助","mark":[]},
-						{"id":"06","power":0,"img":"default.png","url":"https://www.3dmgame.com/","title":"3DM游戏网","desc":"单机游戏_单机游戏下载_单机游戏大全中文版下载","mark":[]}
-						,{"id":"aaa","power":0,"img":"default.png","url":"https://www.xiaoxingjie.com/","title":"小幸修改器","desc":"小幸修改器官方网站-小幸软件工作室","mark":[]}
+						{"id":"06","power":0,"img":"default.png","url":"https://www.3dmgame.com/","title":"3DM游戏网","desc":"单机游戏_单机游戏下载_单机游戏大全中文版下载","mark":[]},
+						{"id":"07","power":0,"img":"default.png","url":"https://www.xiaoxingjie.com/","title":"小幸修改器","desc":"小幸修改器官方网站-小幸软件工作室","mark":[]}
 					]
 				},
 				{
@@ -616,14 +616,25 @@ link=
 						{"id":"16","power":0,"img":"91-17.png","url":"https://store.epicgames.com/zh-CN/free-games","title":"Epic免费游戏","desc":"每周都有免费游戏 | Epic游戏商城","mark":[]},
 						{"id":"17","power":0,"img":"91-18.png","url":"https://www.heishenhua.com/","title":"黑神话：悟空","desc":"西游题材·单机·动作·角色扮演游戏","mark":[]},
 						{"id":"18","power":0,"img":"default.png","url":"https://www.iwo.im/","title":"让我帮你百度一下","desc":"让我帮你百度一下","mark":[]},
-						{"id":"19","power":0,"img":"default.png","url":"https://lmbtfy.cn/","title":"Let Me Baidu That For You","desc":"Let Me Baidu That For You","mark":[]}
-						,{"id":"aaa","power":0,"img":"default.png","url":"https://nazo.games/","title":"謎.Games","desc":"謎.Games","mark":[]}
+						{"id":"19","power":0,"img":"default.png","url":"https://lmbtfy.cn/","title":"Let Me Baidu That For You","desc":"Let Me Baidu That For You","mark":[]},
+						{"id":"20","power":0,"img":"default.png","url":"https://nazo.games/","title":"謎.Games","desc":"謎.Games","mark":[]}
 					]
 				}
 			]
 		}
 	],
 	"update":[
+		{
+			"date":"2022年7月13日👉持续更新👈",
+			"time":"2022-7-13 23:25:50",
+			"title":"版本内容（<span>往期日志</span>）",
+			"content":[
+				"添加'往期日志'点击功能",
+				"添加notice_list类",
+				"修改点击链接ID",
+				"修改往期日志样式"
+			]
+		},
 		{
 			"date":"2022年7月10日👉持续更新👈",
 			"time":"2022-7-10 22:31:03",
@@ -632,8 +643,7 @@ link=
 				"修复高级权限列表显示错误的问题",
 				"增加公告更新的角标提示",
 				"优化部分函数",
-				"增加'影视'相关的描述文字",
-				"增加'更新日志'点击功能"
+				"增加'影视'相关的描述文字"
 			]
 		},
 		{

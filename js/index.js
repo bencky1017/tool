@@ -168,7 +168,24 @@ $(function(){
 
 	// 展开往期日志
 	$('.web_notice_frame .title span').on('click',function(){
+		$('.notice_list_old').remove();
+		$('.notice_list:nth-child(1)').after('<div class="notice_list_old"></div>');
 
+		var note_len=link.update.length;
+		for (var i = 1; i < note_len; i++) {
+			var note=link.update[i];// 更新信息表
+			var note_date=note.date;// 日期
+			var note_title=note.title;// 标题
+			var list_content=note.content;// 内容表
+			var len_content=list_content.length;// 表长度
+
+			$('.notice_list_old').append('<div class="notice_list"><h4 class="date">'+note_date+'</h4></div>');
+			for (var j = 0;j < len_content; j++) {
+				if (list_content[j]!='') {
+					$('.notice_list').eq(i).append('<p>'+(j+1)+'.'+list_content[j]+'</p>');
+				}else continue;
+			}
+		}
 	});
 });
 
@@ -469,10 +486,10 @@ var Update=function(){
 	var list_content=note.content;// 内容表
 	var len_content=list_content.length;// 表长度
 
-	$('.web_notice_frame').append('<h4 class="date">'+note_date+'</h4><h4 class="title">'+note_title+'</h4>');
+	$('.web_notice_frame').append('<div class="notice_list"><h4 class="date">'+note_date+'</h4><h4 class="title">'+note_title+'</h4></div>');
 	for (var i = 0; i < len_content; i++) {
 		if (list_content[i]!='') {
-			$('.web_notice_frame').append('<p>'+(i+1)+'.'+list_content[i]+'</p>');
+			$('.notice_list').append('<p>'+(i+1)+'.'+list_content[i]+'</p>');
 		}else continue;
 	}
 
