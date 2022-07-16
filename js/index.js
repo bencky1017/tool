@@ -263,7 +263,7 @@ $(function(){
 						    open: 'animated bounceIn',    //必须加animated
 						    close: 'animated bounceOut'   //后面跟特效名
 						},
-						modal: true,                     //模态框：背景不可点击
+						modal: false,                     //模态框：背景不可点击
 						scroll: null                      //
 					}).show();
 					break;
