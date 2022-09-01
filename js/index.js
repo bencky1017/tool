@@ -210,16 +210,6 @@ $(function(){
 			window.localStorage.setItem('bk_tool_isSimple',JSON.stringify(0));
 		}
 	});
-
-	// 简约模式盒子设置
-	// var simpleSet=function(){
-	// 	var simple_frame=$('.list-frame');
-	// 	var simple_btn=$('.list-btn');
-	// 	var getvalue=window.localStorage.getItem('bk_tool_isSimple');
-	// 	var value=simple_btn.attr('data-value');
-
-	// }()
-
 });
 
 $(function(){
@@ -454,11 +444,15 @@ $(function(){
 		element.attr('data-value','0');
 		element.css('margin-left',' 2px');
 		element.parent().removeClass('list_open').addClass('list_close');
+		$('.box-list_simple').removeClass('box-list_simple').addClass('box-list');
+		$('.text-desc').css({'display':''});
 	}
 	else if (getSimple=='1') {
 		element.attr('data-value','1');
 		element.css('margin-left','23px');
 		element.parent().removeClass('list_close').addClass('list_open');
+		$('.box-list').removeClass('box-list').addClass('box-list_simple');
+		$('.text-desc').css({'display':'none'});
 	}
 });
 
