@@ -187,13 +187,45 @@ $(function(){
 			}
 		}
 	});
+
+	// 简约模式切换功能
+	$('.list-frame').on('click',function(){
+		var simple_frame=$('.list-frame');
+		var simple_btn=$('.list-btn');
+		var getvalue=window.localStorage.getItem('bk_tool_isSimple');
+		var value=simple_btn.attr('data-value');
+		if (getvalue=='0') {
+			simple_btn.attr('data-value','1');
+			simple_btn.css('margin-left','23px');
+			simple_frame.toggleClass('list_close').toggleClass('list_open');
+			$('.box-list').removeClass('box-list').addClass('box-list_simple');
+			$('.text-desc').css({'display':'none'});
+			window.localStorage.setItem('bk_tool_isSimple',JSON.stringify(1));
+		}else if (getvalue=='1') {
+			simple_btn.attr('data-value','0');
+			simple_btn.css('margin-left','2px');
+			simple_frame.toggleClass('list_close').toggleClass('list_open');
+			$('.box-list_simple').removeClass('box-list_simple').addClass('box-list');
+			$('.text-desc').css({'display':''});
+			window.localStorage.setItem('bk_tool_isSimple',JSON.stringify(0));
+		}
+	});
+
+	// 简约模式盒子设置
+	// var simpleSet=function(){
+	// 	var simple_frame=$('.list-frame');
+	// 	var simple_btn=$('.list-btn');
+	// 	var getvalue=window.localStorage.getItem('bk_tool_isSimple');
+	// 	var value=simple_btn.attr('data-value');
+
+	// }()
+
 });
 
 $(function(){
 	// 高级模式
 	var jsonData={'key':'','value':'','power':0,'last_power':0};
 	window.localStorage.setItem('bk_tool_devmode',JSON.stringify(jsonData));
-
 
 	// 登录权限
 	$('.header-login').on('click',function(){
@@ -410,6 +442,24 @@ $(function(){
 			}).show();
 		});
 	});
+
+	// 简约模式按钮
+	var bk_tool_isSimple=window.localStorage.getItem('bk_tool_isSimple');
+	var getSimple=bk_tool_isSimple!=null&bk_tool_isSimple!=undefined?JSON.parse(bk_tool_isSimple):0;
+	window.localStorage.setItem('bk_tool_isSimple',JSON.stringify(getSimple));
+
+	// 按钮初始化
+	var element=$('.list-frame .list-btn');
+	if (getSimple=='0') {
+		element.attr('data-value','0');
+		element.css('margin-left',' 2px');
+		element.parent().removeClass('list_open').addClass('list_close');
+	}
+	else if (getSimple=='1') {
+		element.attr('data-value','1');
+		element.css('margin-left','23px');
+		element.parent().removeClass('list_close').addClass('list_open');
+	}
 });
 
 //自定义方法：数值左填充，默认为0
