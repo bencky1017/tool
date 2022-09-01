@@ -84,27 +84,58 @@ body{
 	/*background-color: #bd5bd550;*/
 }
 .header-sign{
-	width: 54vw;
+	width: 50vw;
+	/*width: 790px;*/
 	max-width: 790px;
 	height: 28px;/*border占2px*/
-	margin: 10px 40px 10px 10px;
+	margin: 10px 10px 10px 10px;
 	line-height: 30px;
 	font-size: 14px;
 	text-align: center;
 	border: 1px solid #aaa;
 	/*background-color: #5bdbd550;*/
-
+	overflow: hidden;
 }
-/*.header-sign{
-	width: 790px;
-	height: 28px;border占2px*/
-	/*margin: 10px 40px 10px 10px;
-	line-height: 30px;
-	font-size: 14px;
+.list-frame{
+	width: 48px;
+	height: 24px;
+	margin: 14px 10px 0px 20px;
+	border-radius: 12px;
+	background-color: #eee;
+	color: #fff;
 	text-align: center;
-	border: 1px solid #aaa;
-	/*background-color: #5bdbd550;
-}*/
+	font-size: 14px;
+	line-height: 24px;
+	margin-left: 5px;
+	margin-right: 5px;
+	cursor: pointer;
+	position: relative;
+	transition: ease-in-out 0.1s;
+}
+.list-btn{
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+	border-radius: 10px;
+	background-color: #19c;
+	color: #fff;
+	box-shadow:   3px 0px 1px 0px #369 ;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	margin: 0px 0px 0px 2px;
+	transition: ease-in-out 0.1s;
+}
+.list_open{
+	background-color: #2AC95C;
+}
+.list_close{
+	background-color: #EE4747;
+	background-color: #848484;
+}
+
 .header-login{
 	width: 90px;
 	margin: 10px 10px 10px 10px;
@@ -278,6 +309,18 @@ body{
 	top: 0px;
 	cursor: pointer;
 }
+.box-list_simple{
+	width: 80px;
+	height: 96px;
+	margin: 10px;
+	padding: 15px 15px;
+	border-radius: 10px;
+	background-color: #4D555D;
+	transition: 0.2s;
+	position: relative;
+	top: 0px;
+	cursor: pointer;
+}
 .box-list:hover{
 	position: relative;
 	top: 0px;
@@ -318,6 +361,7 @@ body{
 .list-text{
 	/*background-color: #ab9;*/
 	margin: -4px 10px;/*上边数据对冲*/
+	word-wrap: break-word;
 }
 .text-title{
 	font-size: 14px;
