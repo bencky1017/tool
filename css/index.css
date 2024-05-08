@@ -181,9 +181,7 @@ body{
 	width: 100%;
 	height: auto;
 }
-[class*='main-']{
 
-}
 .leftside{/*左侧栏*/
 	min-width: 100px;
 	height: auto;
@@ -284,7 +282,7 @@ body{
 	max-width: 1000px;
 	/*min-width: 100%;*/
 	padding: 10px;
-	margin-bottom: 20px;
+	margin-bottom: 100px;
 	border-radius: 10px;
 	border-top-left-radius: 0px;
 	background-color: #343d46;
