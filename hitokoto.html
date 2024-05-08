@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
+
 <head>
 	<meta charset="UTF-8">
 	<link rel="icon" type="image/png" sizes="128x128" href="favicon.ico">
 	<title>Hitokoto Message</title>
 	<!-- <script type="text/javascript" src="js/jquery-3.5.1.js"></script> -->
-	<base target="_self"/>
+	<base target="_self" />
 	<style type="text/css">
-		.hito_main{
+		body{
+			background: #3e444a;
+			color: #eee;
+		}
+		.hito_main {
 			position: absolute;
 			left: 50%;
 			top: 50%;
-			transform: translate(-50%,-50%);
-			height: ;
+			transform: translate(-50%, -50%);
+			height: auto;
 			width: 70vw;
 			border: #666 solid 2px;
 			text-align: left;
@@ -20,12 +25,38 @@
 		}
 	</style>
 </head>
+
 <body>
 	<div class="hito_main">
 		<pre style="word-wrap: break-word; white-space: pre-wrap;" id="hito_str"></pre>
 	</div>
 	<script type="text/javascript">
-		document.getElementById('hito_str').innerHTML=localStorage.getItem('bk_tool_hito');
+		function escapeHtml(str) {
+			// 转换方法，防止被渲染为html
+			var escape_list = ['&', '<', '>', '"', "'"]
+			var replace_list = ['&amp;', '&lt;', '&gt;', '&quot;', '&#39;']
+			return str.replace(/[&<"']/g, function (match) {
+				return replace_list[escape_list.indexOf(match)]
+				// switch (match) {
+				//     case '&':
+				//         return '&amp;';
+				//     case '<':
+				//         return '&lt;';
+				//     case '>':
+				//         return '&gt;';
+				//     case '"':
+				//         return '&quot;';
+				//     case "'":
+				//         return '&#39;';
+				//     default:
+				//         return match;
+				// }
+			});
+		}
+		document.getElementById('hito_str').innerHTML = escapeHtml(JSON.stringify(JSON.parse(localStorage.getItem('bk_tool_hito')), null, 4));
 	</script>
+	<script src="https://api.vvhan.com/api/script/bolang"></script>
+	<script src="https://api.vvhan.com/api/script/snow"></script>
 </body>
+
 </html>

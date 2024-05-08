@@ -101,35 +101,8 @@
 	<script type="text/javascript">
 		$.get("https://v1.hitokoto.cn/?c=b&c=d&c=e&c=f&c=g&c=h&c=j&",function(data,status){
 			if (status == 'success'){
-				var hito_str='';
-				let param=new Array(12);
-				param[0]=data.id;			//id
-				param[1]=data.uuid;			//uuid
-				param[2]=data.hitokoto;		//hitokoto
-				param[3]=data.type;			//type
-				param[4]=data.from;			//from
-				param[5]=data.from_who;		//from_who
-				param[6]=data.creator;		//creator
-				param[7]=data.creator_uid;	//creator_uid
-				param[8]=data.reviewer;		//reviewer
-				param[9]=data.commit_from;	//commit_from
-				param[10]=data.created_at;	//created_at
-				param[11]=data.length;		//length
-				
-				tool_hito='{\n&nbsp;"id":'		+param[0]+
-					',\n&nbsp;"uuid":"'			+param[1]+'"'+
-					',\n&nbsp;"hitokoto":"'		+param[2]+'"'+
-					',\n&nbsp;"type":"'			+param[3]+'"'+
-					',\n&nbsp;"from":"'			+param[4]+'"'+
-					',\n&nbsp;"from_who":"'		+param[5]+'"'+
-					',\n&nbsp;"creator":"'		+param[6]+'"'+
-					',\n&nbsp;"creator_uid":'	+param[7]+
-					',\n&nbsp;"reviewer":'		+param[8]+
-					',\n&nbsp;"commit_from":"'	+param[9]+'"'+
-					',\n&nbsp;"created_at":"'	+param[10]+'"'+
-					',\n&nbsp;"length":'		+param[11]+
-					'\n}';
-				window.localStorage.setItem("bk_tool_hito",tool_hito);
+				var hito_str= JSON.stringify(data);
+				window.localStorage.setItem("bk_tool_hito", hito_str);
 				$('.sign_a').text(data.hitokoto);
 				$('.sign_href').attr('href', 'hitokoto.html')
 				// $('.sign_a').attr('href', 'https://v1.hitokoto.cn/?c=b&c=d&c=e&c=f&c=g&c=h&c=j&id=' + data.id)
@@ -141,5 +114,10 @@
 			}
 		});
 	</script>
+	<script src="https://api.vvhan.com/api/script/snow"></script>
+	<script src="https://api.vvhan.com/api/script/bolang"></script>
+	<!-- <script src="https://api.vvhan.com/api/script/yinghua"></script> -->
+	<!-- <script src="https://api.vvhan.com/api/script/meihua"></script> -->
+	<!-- <script src="https://api.vvhan.com/api/script/denglong"></script> -->
 </body>
 </html>
