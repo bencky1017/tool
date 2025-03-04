@@ -166,27 +166,70 @@ $(function(){
 	// 更新内容公告提示
 	Update();
 
-	// 展开往期日志
-	$('.web_notice_frame .title span').on('click',function(){
-		$('.notice_list_old').remove();
-		$('.notice_list:nth-child(1)').after('<div class="notice_list_old"></div>');
+	// 修改后的展开/关闭功能
+	$('.web_notice_frame .title span').on('click', function () {
+		const $btn = $(this);
+		const $oldContent = $('.notice_list_old');
 
-		var note_len=link.update.length;
-		for (var i = 1; i < note_len; i++) {
-			var note=link.update[i];// 更新信息表
-			var note_date=note.date;// 日期
-			var note_title=note.title;// 标题
-			var list_content=note.content;// 内容表
-			var len_content=list_content.length;// 表长度
+		if ($oldContent.length) {  // 如果已经展开
+			// 移除往期日志
+			$oldContent.remove();
+			// 修改按钮状态
+			$btn.text('往期日志').css('color', '');  // 移除颜色
+		} else {  // 如果未展开
+			// 创建容器
+			$('.notice_list:nth-child(1)').after('<div class="notice_list_old"></div>');
 
-			$('.notice_list_old').append('<div class="notice_list"><h4 class="date">'+note_date+'</h4></div>');
-			for (var j = 0;j < len_content; j++) {
-				if (list_content[j]!='') {
-					$('.notice_list').eq(i).append('<p>'+(j+1)+'.'+list_content[j]+'</p>');
-				}else continue;
+			// 添加往期日志内容
+			const note_len = link.update.length;
+			for (let i = 1; i < note_len; i++) {
+				const note = link.update[i];
+				const note_date = note.date;
+				const note_title = note.title;
+				const list_content = note.content;
+				const len_content = list_content.length;
+
+				// 创建日志条目时添加唯一索引
+				$('.notice_list_old').append(`
+					<div class="notice_list old_${i}">
+						<h4 class="date">${note_date}</h4>
+					</div>
+				`);
+
+				// 添加具体内容到对应的日志条目
+				const $currentList = $(`.old_${i}`);
+				for (let j = 0; j < len_content; j++) {
+					if (list_content[j]) {
+						$currentList.append(`<p>${j + 1}. ${list_content[j]}</p>`);
+					}
+				}
 			}
+			// 修改按钮状态
+			$btn.text('关闭往期日志').css('color', 'red');
 		}
 	});
+
+	// 展开往期日志
+	// $('.web_notice_frame .title span').on('click',function(){
+	// 	$('.notice_list_old').remove();
+	// 	$('.notice_list:nth-child(1)').after('<div class="notice_list_old"></div>');
+
+	// 	var note_len=link.update.length;
+	// 	for (var i = 1; i < note_len; i++) {
+	// 		var note=link.update[i];// 更新信息表
+	// 		var note_date=note.date;// 日期
+	// 		var note_title=note.title;// 标题
+	// 		var list_content=note.content;// 内容表
+	// 		var len_content=list_content.length;// 表长度
+
+	// 		$('.notice_list_old').append('<div class="notice_list"><h4 class="date">'+note_date+'</h4></div>');
+	// 		for (var j = 0;j < len_content; j++) {
+	// 			if (list_content[j]!='') {
+	// 				$('.notice_list').eq(i).append('<p>'+(j+1)+'.'+list_content[j]+'</p>');
+	// 			}else continue;
+	// 		}
+	// 	}
+	// });
 
 	// 简约模式切换功能
 	$('.list-frame').on('click',function(){
@@ -589,6 +632,77 @@ var Update=function(){
 		change();
 
 	})
+
+	// 移动公告窗口
+	// 添加公告窗口拖动功能
+	var isDragging = false;
+	var startX, startY, initialLeft, initialTop;
+
+	// 鼠标按下时开始拖动
+	$('.web_notice h3').on('mousedown', function (e) {
+		isDragging = true;
+		var $dialog = $(this).closest('.web_notice > div');
+		var offset = $dialog.offset();
+
+		// 记录初始位置
+		initialLeft = offset.left;
+		initialTop = offset.top;
+
+		// 记录鼠标起点坐标
+		startX = e.pageX;
+		startY = e.pageY;
+
+		// 防止文本选中
+		e.preventDefault();
+
+		// 绑定事件
+		$(document).on('mousemove', onMouseMove);
+		$(document).on('mouseup', onMouseUp);
+	});
+
+	function onMouseMove(e) {
+		if (!isDragging) return;
+		var $dialog = $('.web_notice > div');
+
+		// 计算移动距离
+		var deltaX = e.pageX - startX;
+		var deltaY = e.pageY - startY;
+
+		// 计算新位置
+		var newLeft = initialLeft + deltaX;
+		var newTop = initialTop + deltaY;
+
+		// 视口边界限制
+		var maxX = $(window).width() - $dialog.outerWidth();
+		var maxY = $(window).height() - $dialog.outerHeight();
+
+		newLeft = Math.max(0, Math.min(newLeft, maxX));
+		newTop = Math.max(0, Math.min(newTop, maxY));
+
+		// 更新位置并移除原有transform
+		$dialog.css({
+			left: newLeft + 'px',
+			top: newTop + 'px',
+			transform: 'none'
+		});
+	}
+
+	function onMouseUp() {
+		isDragging = false;
+		$(document).off('mousemove', onMouseMove);
+		$(document).off('mouseup', onMouseUp);
+	}
+
+	// 每次打开弹窗时重置居中显示
+	$('.web_notice_btn').on('click', function () {
+		$('.web_notice').show();
+		var $dialog = $('.web_notice > div');
+		$dialog.css({
+			left: '50%',
+			top: '50%',
+			transform: 'translate(-50%, -50%)'
+		});
+	});
 	
 	// console.group('时间戳\t\t\t\t'+		last_stamp);//'2022-7-10 14:41:35'
 	// console.log('toString\t\t\t'+		new Date(note_time).toString());
