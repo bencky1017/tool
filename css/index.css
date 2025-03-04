@@ -468,6 +468,9 @@ body{
 .web_notice_frame h6{margin: 5px 0px;color: #fff;}
 .web_notice_frame p{margin: 0px 0px;color: #fff;}
 .web_notice_frame p:last-child{margin-bottom: 10px;color: #fff;}
+.web_notice_frame h4[class=date]{
+	color: #4fc4ff;
+}
 .web_notice_btn{
 	width: 50px;
 	height: 50px;
@@ -485,6 +488,16 @@ body{
 .web_notice_btn:hover{
 	color: #0AF;
 	border: solid 2px #0af;
+}
+.web_notice h3{
+	cursor: move;/* 默认显示移动光标 */
+	user-select: none;/* 防止文字被选中 */
+}
+.web_notice h3:hover{
+	cursor: grab; /* 鼠标悬浮时显示抓取光标 */
+}
+.web_notice h3:active {
+	cursor: grabbing;/* 鼠标按下时显示正在抓取的光标 */
 }
 .notice_tip{
 	position: absolute;
